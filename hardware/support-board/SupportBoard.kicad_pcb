@@ -8,7 +8,7 @@
 	)
 	(paper "A4")
 	(title_block
-		(title "ARM CONCEPT - BANK COPPER ONLY")
+		(title "ACTUATOR SUPPORT BOARD - UNVALIDATED PROTOTYPE")
 		(comment 1 "180 x 45 mm; arm fit and underside height unverified")
 	)
 	(layers
@@ -33053,7 +33053,7 @@
 		(layer "Edge.Cuts")
 		(uuid "f47a0d25-15b4-4008-86b1-3e622f8bad63")
 	)
-	(gr_text "ARM CONCEPT / BANK COPPER ONLY"
+	(gr_text "ACTUATOR SUPPORT BOARD / PROTOTYPE"
 		(at 95 42 0)
 		(layer "F.Fab")
 		(uuid "8889171e-dbba-4b87-bd7c-7f299833e179")

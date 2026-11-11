@@ -12,7 +12,8 @@ KiCad 10.0.7 reported zero PCB rule violations, unconnected items, and
 schematic/PCB mismatches for all five projects. The support board had three ERC
 warnings about embedded symbol copies (D5, D6 and JP1). The other four projects
 had zero ERC findings. The included Gerber layers, drill files, BOMs and
-positions matched fresh exports. These are checks of design files. Fabricator
+positions matched fresh exports. Each Gerber job manifest lists the nine layers
+included in its ZIP. These are checks of design files. Fabricator
 DFM, first-article inspection, and all hardware validation remain open.
 
 From the folder containing a routed board's KiCad project, substitute its

@@ -7,6 +7,7 @@ BUS+ and BRK_SW and to J6 for the thermostat.
 
 - [KiCad project](SupportBoard.kicad_pro) and [parts list](bom.csv)
 - [Schematic PDF](../../fab/support-board/SupportBoard/SupportBoard-schematic.pdf)
+- [Front and back copper review PDF](SupportBoard-layout.pdf)
 - [Gerber and drill ZIP](../../fab/support-board/SupportBoard/SupportBoard-gerbers.zip)
 
 The 180 × 45 mm, two-layer board is routed, with components on both faces.
