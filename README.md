@@ -20,13 +20,19 @@ testing are still open.
 | DF40 header breakout | [Bench breakout](hardware/df40-breakouts/DF40_Header_Breakout/) | [ZIP](fab/df40-breakouts/DF40_Header_Breakout/DF40_Header_Breakout-gerbers.zip) | Routed. No DRC or ERC findings. Mating orientation and fit need checking. |
 | DF40 receptacle breakout | [Bench breakout](hardware/df40-breakouts/DF40_Receptacle_Breakout/) | [ZIP](fab/df40-breakouts/DF40_Receptacle_Breakout/DF40_Receptacle_Breakout-gerbers.zip) | Routed. No DRC or ERC findings. Mating orientation and fit need checking. |
 | Common logic | [Controller stack draft](hardware/wip/logic-board/) | | Partially routed, 177 unconnected items. |
-| P96 power | [Controller stack draft](hardware/wip/power-p96/) | | Partially routed, 212 unconnected items and one silkscreen DRC finding. |
-| WGG power | [Controller stack draft](hardware/wip/power-wgg/) | | Partially routed, 258 unconnected items. |
+| P96 power (GIM8115-36 / GIM8108-36) | [Controller stack draft](hardware/wip/power-p96/) | | Partially routed, 212 unconnected items and one silkscreen DRC finding. |
+| WGG power (WGG8108-8) | [Controller stack draft](hardware/wip/power-wgg/) | | Partially routed, 258 unconnected items. |
 
 Open each project's `.kicad_pro` in KiCad 10. The five routed boards also have
 schematic PDFs, BOMs and position files. See [fabrication files](fab/) for
 export settings and the scope of the checks. See the [DF40 breakout
 notes](hardware/df40-breakouts/) for the pin map and bench setup.
+
+## Earlier controllers
+
+The [controller archive](hardware/archive/) includes the single-board X1
+draft, the P57 and Unitree IM6014 design status, and a pinned link to the
+separate MD80-compatible controller.
 
 ## Work still open
 

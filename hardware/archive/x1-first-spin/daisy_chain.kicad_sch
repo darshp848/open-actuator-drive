@@ -1,0 +1,501 @@
+(kicad_sch
+	(version 20250114)
+	(generator eeschema)
+	(uuid "0594956d-12fc-5ee5-a865-6893670b6f33")
+	(paper "A4")
+	(title_block
+		(title "X1 - Power + CAN chain")
+		(rev "DRAFT 0.2")
+		(date "2026-10-12")
+		(company "X1-derived draft")
+	)
+	(lib_symbols
+		(symbol "X1_Draft:XT30PW_2plus2_M"
+			(pin_names
+				(offset 1.016)
+			)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "XT30PW(2+2)-M"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "X1_Draft:XT30PW22M"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "Datasheet" "https://www.china-amass.com/public/upload/20240608/de5851c8aab643bce61911b73c16e601.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(symbol "XT30PW_2plus2_M_0_1"
+				(rectangle
+					(start -7.62 10.16)
+					(end 7.62 -10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "XT30PW_2plus2_M_1_1"
+				(pin passive line
+					(at -10.16 7.62 0)
+					(length 2.54)
+					(name "V_BUS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "RETURN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "CAN_H"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -7.62 0)
+					(length 2.54)
+					(name "CAN_L"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "X1_Draft:XT30PW_2plus2_M")
+		(at 81.28 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "92e4a420-9cad-5a3e-9965-d8174a7abe94")
+		(property "Reference" "J1"
+			(at 81.28 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "XT30PW(2+2)-M"
+			(at 81.28 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "X1_Draft:XT30PW22M"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Datasheet" "https://www.china-amass.com/public/upload/20240608/de5851c8aab643bce61911b73c16e601.pdf"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "MPN" "XT30PW(2+2)-M.G.B"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/bd70986b-b0dc-4add-82aa-78459b97d0c4/5b96a34a-0728-553e-a055-221443916547"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ca582a47-6aa9-56f8-b168-c232c53df372")
+		)
+		(pin "2"
+			(uuid "17409596-12d0-58b0-a420-4fc14412e74a")
+		)
+		(pin "3"
+			(uuid "50a5a8be-2eb9-5cdf-95fe-4f0d07c8dab5")
+		)
+		(pin "4"
+			(uuid "dc5a9fe4-3e46-561e-a3be-1a6b022d55b0")
+		)
+		(property "MF" "AMASS"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "POPULATE" "1"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+	)
+	(symbol
+		(lib_id "X1_Draft:XT30PW_2plus2_M")
+		(at 195.58 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "80b433db-98f6-5395-902c-d95a9a1ee1a8")
+		(property "Reference" "J5"
+			(at 195.58 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "XT30PW(2+2)-M"
+			(at 195.58 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "X1_Draft:XT30PW22M"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Datasheet" "https://www.china-amass.com/public/upload/20240608/de5851c8aab643bce61911b73c16e601.pdf"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "MPN" "XT30PW(2+2)-M.G.B"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/bd70986b-b0dc-4add-82aa-78459b97d0c4/5b96a34a-0728-553e-a055-221443916547"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4570027e-9405-5ea5-897c-cfd629744192")
+		)
+		(pin "2"
+			(uuid "35680e89-8e6c-5258-b729-ccd58cce5fbe")
+		)
+		(pin "3"
+			(uuid "8d5b913c-cfa1-52f3-8bd1-7962444c948c")
+		)
+		(pin "4"
+			(uuid "41c57b24-3029-511e-a788-a0aecf3d054b")
+		)
+		(property "MF" "AMASS"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "POPULATE" "1"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+	)
+	(text "IDENTICAL PASS-THROUGH PORTS: either may face upstream.\n1 = DC bus positive; 2 = power return; 3 = CAN-H; 4 = CAN-L.\nBoth ports share the same nets; the local inverter branches from this bus.\n\nR20: 120 ohm, DNP at intermediate nodes; populate at a physical bus end only.\nComplete CAN bus: exactly two end terminations; keep the debug stub short.\n\nUp to 8 nodes is a network target, subject to total DC current and cable limits.\nAMASS 20 A MAX / 85 K-rise test is not a qualified continuous system rating.\nBefore fabrication: independently verify mating polarity/keying and thermal rise."
+		(at 139.7 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a79022cc-cee8-5b4a-b220-3207f6823587")
+	)
+	(wire
+		(pts
+			(xy 71.12 68.58)
+			(xy 55.88 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1074d571-ffb7-5d7b-875b-5ea772f26237")
+	)
+	(global_label "V+"
+		(shape bidirectional)
+		(at 55.88 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0fe8ccf9-6d39-5fbf-aad3-c77bc4ebb4ee")
+	)
+	(wire
+		(pts
+			(xy 71.12 73.66)
+			(xy 55.88 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9b4a99f-92c8-58cc-b891-412bbd2ffae6")
+	)
+	(global_label "GNDPWR"
+		(shape bidirectional)
+		(at 55.88 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a5d61f85-fe3d-5f93-a769-b2f24242032e")
+	)
+	(wire
+		(pts
+			(xy 71.12 78.74)
+			(xy 55.88 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40a681c4-e0c9-540d-b5e4-855d12d77f00")
+	)
+	(global_label "CAN_H"
+		(shape bidirectional)
+		(at 55.88 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0d3cdf41-8667-5544-bcde-3a2b5590e8c2")
+	)
+	(wire
+		(pts
+			(xy 71.12 83.82)
+			(xy 55.88 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfa73720-6a47-55ad-b38f-1a43c48bf56a")
+	)
+	(global_label "CAN_L"
+		(shape bidirectional)
+		(at 55.88 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f0596a15-cc9d-5310-9567-631b98a4e99d")
+	)
+	(wire
+		(pts
+			(xy 185.42 68.58)
+			(xy 170.18 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c947f2f2-9a66-5294-976a-e254e8e40a35")
+	)
+	(global_label "V+"
+		(shape bidirectional)
+		(at 170.18 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "723a3854-0e1a-5626-80a0-c5bbd7547867")
+	)
+	(wire
+		(pts
+			(xy 185.42 73.66)
+			(xy 170.18 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20579e12-daf8-5c02-970e-94426fe3cd21")
+	)
+	(global_label "GNDPWR"
+		(shape bidirectional)
+		(at 170.18 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "904e4d04-f482-5947-a6b0-c99fa7df5aa2")
+	)
+	(wire
+		(pts
+			(xy 185.42 78.74)
+			(xy 170.18 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b813e758-5a63-599a-a41f-2d3088415e88")
+	)
+	(global_label "CAN_H"
+		(shape bidirectional)
+		(at 170.18 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e2ae97c5-3aa4-5498-ad62-91759bd1e407")
+	)
+	(wire
+		(pts
+			(xy 185.42 83.82)
+			(xy 170.18 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91414ab4-4467-5280-9a5b-24ff59b776e4")
+	)
+	(global_label "CAN_L"
+		(shape bidirectional)
+		(at 170.18 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4ea99375-c607-558d-bb6d-48ed22baf51c")
+	)
+)
