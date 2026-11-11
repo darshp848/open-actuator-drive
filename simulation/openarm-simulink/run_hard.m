@@ -1,0 +1,3 @@
+% Harder-scenario batch (2026-10-25): new cases first, then the four baselines refreshed at 100 kHz PWM and hard stops.
+batch_run({'multi_fast','estop_coast','estop_ramp','release6','multi_fast_auxfail','estop_coast_auxfail', ...
+    'drop6_batt','multi_fast_batt','lift6','drop6','drop6_auxfail','drop6_nobrake'})

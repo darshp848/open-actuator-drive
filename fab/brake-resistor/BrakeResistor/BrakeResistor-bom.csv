@@ -1,0 +1,6 @@
+"Reference","Value","Footprint","QUANTITY","Manufacturer","MPN","DNP"
+"HS1-HS4","RA-T2X-64E","","4","Ohmite","RA-T2X-64E",""
+"J1","to support J4","BrakeResistor:PowerWire_P8","1","","",""
+"J2","to support J6 (JST PH)","Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical","1","JST","B2B-PH-K-S",""
+"R1-R4","10R LTO100","BrakeResistor:LTO100_on_Ohmite_RA-T2X-64E","4","Vishay Sfernice","LTO100F10R00JTE3",""
+"SW1","67L085P NC opens 85C","BrakeResistor:Airpax_67L_TO-220-2_on_RA-T2X_web","1","Sensata Airpax","67L085P",""

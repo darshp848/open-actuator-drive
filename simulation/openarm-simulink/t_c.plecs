@@ -1,0 +1,431 @@
+Plecs {
+  Name          "t_c"
+  Version       "5.0"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "0.03"
+  Timeout       ""
+  Solver        "radau"
+  MaxStep       "1e-6"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "1e-3"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "2"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "2"
+  AssertionAction "1"
+  InitializationCommands "pp = 21;\nRs = 0.49;\nLs = 0.000275;\nlam = 0.01083;\nJm = 0.0001;\nc_"
+"couple = 10000.0;\nwm0 = 0;\nkp_i = 1.728;\nki_i = 3079;\nv_frac = 0.5"
+"485;\nron = 0.009;\nfsw = 100000.0;\ntd = 1e-07;\nr_hop = 0.01;\nl_hop"
+" = 2e-07;\nc_local = 7.6e-05;\nesr_local = 0.005;\nv0 = 48;\nraw_ts = "
+"1e-06;\nref_t = [0 1];\nref_wm = [0 0];\nref_iq = [0 0];\nref_vb = [48"
+" 48];"
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [0, 53; 1300, 700]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          CScript
+      Name          "FOC"
+      Show          on
+      Position      [600, 600]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "DialogGeometry"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "NumInputs"
+        Value         "5"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumOutputs"
+        Value         "8"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumContStates"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumDiscStates"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumZCSignals"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DirectFeedthrough"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ts"
+        Value         "1/fsw"
+        Show          off
+      }
+      Parameter {
+        Variable      "TerminalBasedSampleTimes"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Parameters"
+        Value         "pp, Rs, Ls, lam, kp_i, ki_i, v_frac, 1/fsw, ref_t, ref_wm, ref_iq, ref"
+"_vb"
+        Show          off
+      }
+      Parameter {
+        Variable      "LangStandard"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "GnuExtensions"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "RuntimeCheck"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Declarations"
+        Value         "#include <math.h>\n#define P(i) ParamRealData(i, 0)\n#define PP P(0)\n"
+"#define RS P(1)\n#define LS P(2)\n#define LAM P(3)\n#define KP P(4)\n#"
+"define KI P(5)\n#define VFRAC P(6)\n#define TS P(7)\n#define NREF (Par"
+"amDim(8, 0)*ParamDim(8, 1))\n#define PI_ 3.14159265358979323846\n#defi"
+"ne REFT(k) ParamRealData(8, k)\n#define REFW(k) ParamRealData(9, k)\n#"
+"define REFI(k) ParamRealData(10, k)\n#define REFV(k) ParamRealData(11,"
+" k)\nstatic double zd, zq, dn[3], out_wm, out_vb, out_iqr, out_id, out"
+"_iq;\nstatic int kref;\n"
+        Show          off
+      }
+      Parameter {
+        Variable      "StartFcn"
+        Value         "zd = 0; zq = 0; kref = 0; dn[0] = dn[1] = dn[2] = 0.5; out_id = 0; out"
+"_iq = 0;\n{\n    double tl = 0.0;\n    while (kref < NREF - 2 && REFT("
+"kref + 1) <= tl) kref++;\n    double t0 = REFT(kref), t1 = REFT(kref +"
+" 1);\n    double f = (t1 > t0) ? (tl - t0)/(t1 - t0) : 0.0;\n    if (f"
+" < 0) f = 0;\n    if (f > 1) f = 1;\n    out_wm = REFW(kref) + f*(REFW"
+"(kref + 1) - REFW(kref));\n    out_iqr = REFI(kref) + f*(REFI(kref + 1"
+") - REFI(kref));\n    out_vb = REFV(kref) + f*(REFV(kref + 1) - REFV(k"
+"ref));\n}\n"
+        Show          off
+      }
+      Parameter {
+        Variable      "OutputFcn"
+        Value         "OutputSignal(0, 0) = dn[0]; OutputSignal(0, 1) = dn[1]; OutputSignal(0"
+", 2) = dn[2];\nOutputSignal(0, 3) = out_wm; OutputSignal(0, 4) = out_v"
+"b; OutputSignal(0, 5) = out_iqr;\nOutputSignal(0, 6) = out_id; OutputS"
+"ignal(0, 7) = out_iq;\n"
+        Show          off
+      }
+      Parameter {
+        Variable      "UpdateFcn"
+        Value         "double ia = InputSignal(0, 0), ib = InputSignal(0, 1), ic = InputSigna"
+"l(0, 2);\ndouble thm = InputSignal(0, 3), vb = InputSignal(0, 4);\ndou"
+"ble t = CurrentTime;\n{\n    double tl = t + TS;\n    while (kref < NR"
+"EF - 2 && REFT(kref + 1) <= tl) kref++;\n    double t0 = REFT(kref), t"
+"1 = REFT(kref + 1);\n    double f = (t1 > t0) ? (tl - t0)/(t1 - t0) : "
+"0.0;\n    if (f < 0) f = 0;\n    if (f > 1) f = 1;\n    out_wm = REFW("
+"kref) + f*(REFW(kref + 1) - REFW(kref));\n    out_iqr = REFI(kref) + f"
+"*(REFI(kref + 1) - REFI(kref));\n    out_vb = REFV(kref) + f*(REFV(kre"
+"f + 1) - REFV(kref));\n}\ndouble th = PP*thm, we = PP*out_wm, a = 2.0*"
+"PI_/3.0;\ndouble id = 2.0/3.0*(ia*cos(th) + ib*cos(th - a) + ic*cos(th"
+" + a));\ndouble iq = -2.0/3.0*(ia*sin(th) + ib*sin(th - a) + ic*sin(th"
+" + a));\ndouble ed = -id, eq = out_iqr - iq;\ndouble vd = KP*ed + zd -"
+" we*LS*iq;\ndouble vq = KP*eq + zq + we*LAM + we*LS*id;\ndouble vmax ="
+" VFRAC*(vb > 1 ? vb : 1);\ndouble vm = sqrt(vd*vd + vq*vq);\ndouble s "
+"= (vm > vmax) ? vmax/vm : 1.0;\nvd *= s; vq *= s;\nif (s >= 0.999) { z"
+"d += KI*ed*TS; zq += KI*eq*TS; }\ndouble tha = th + 1.5*we*TS;\ndouble"
+" v[3], vmx, vmn;\nv[0] = vd*cos(tha) - vq*sin(tha);\nv[1] = vd*cos(tha"
+" - a) - vq*sin(tha - a);\nv[2] = vd*cos(tha + a) - vq*sin(tha + a);\nv"
+"mx = fmax(v[0], fmax(v[1], v[2])); vmn = fmin(v[0], fmin(v[1], v[2]));"
+"\nfor (int k = 0; k < 3; k++) {\n    double d = 0.5 + (v[k] - 0.5*(vmx"
+" + vmn))/(vb > 1 ? vb : 1);\n    dn[k] = d < 0 ? 0 : (d > 1 ? 1 : d);\"
+"n}\nout_id = id; out_iq = iq;\n"
+        Show          off
+      }
+      Parameter {
+        Variable      "DerivativeFcn"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "TerminateFcn"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "StoreCustomStateFcn"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "RestoreCustomStateFcn"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "kin"
+      Show          on
+      Position      [1200, 600]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Value"
+        Value         "[1 -0.5 -0.5 0.01 48]"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          ToFile
+      Name          "focf"
+      Show          on
+      Position      [1800, 600]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Filename"
+        Value         "t_foc.csv"
+        Show          off
+      }
+      Parameter {
+        Variable      "FileType"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "WriteSignalNames"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "SampleTime"
+        Value         "1e-5"
+        Show          off
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "net0_go"
+      Show          on
+      Position      [1260, 690]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "sig0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "net0_0"
+      Show          on
+      Position      [660, 690]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "sig0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "net1_go"
+      Show          on
+      Position      [700, 690]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "sig1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "net1_0"
+      Show          on
+      Position      [1860, 690]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "sig1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "kin"
+      SrcTerminal   1
+      DstComponent  "net0_go"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "net0_0"
+      SrcTerminal   1
+      DstComponent  "FOC"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "FOC"
+      SrcTerminal   2
+      DstComponent  "net1_go"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "net1_0"
+      SrcTerminal   1
+      DstComponent  "focf"
+      DstTerminal   1
+    }
+  }
+}

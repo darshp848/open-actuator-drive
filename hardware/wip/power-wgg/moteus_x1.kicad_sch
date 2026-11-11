@@ -1,0 +1,635 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "a6c8bea9-6c3c-5459-b6bb-fedc441bf17d")
+	(paper "A3")
+	(title_block
+		(title "Verros power board - split draft")
+		(date "2026-10-23")
+		(rev "DRAFT 0.2")
+	)
+	(lib_symbols)
+	(text "Custom research firmware is a later work package. This is a PCB design draft."
+		(exclude_from_sim no)
+		(at 190.5 255.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7414b78a-b16c-581b-9833-a14f4cbc9f9a")
+	)
+	(text "80-contact stack: 3 mm nominal gap. No motor current crosses this connector."
+		(exclude_from_sim no)
+		(at 190.5 247.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "98c68cd5-9176-567c-953c-3713d23b60cb")
+	)
+	(sheet
+		(at 22.86 142.24)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "019ebe99-3666-5f81-bac6-97a02324936b")
+		(property "Sheetname" "Power + CAN daisy chain"
+			(at 22.86 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "daisy_chain_power_+_can_daisy_chain.kicad_sch"
+			(at 22.86 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 22.86 35.56)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "15dd07cf-689e-5c23-9da8-5edadd5aea56")
+		(property "Sheetname" "VT Sense"
+			(at 22.86 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "vt_sense_vt_sense.kicad_sch"
+			(at 22.86 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 276.86 71.12)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2bb0cade-6afb-5f97-8706-de44cb3076b3")
+		(property "Sheetname" "CAN"
+			(at 276.86 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "can_can.kicad_sch"
+			(at 276.86 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 22.86 71.12)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "39ec931e-d185-587f-943a-3e82b9957a98")
+		(property "Sheetname" "H Bridge C"
+			(at 22.86 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "h_bridge_h_bridge_c.kicad_sch"
+			(at 22.86 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 149.86 177.8)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "3c43dff0-1a06-513b-b254-a40aba34a36e")
+		(property "Sheetname" "Stack mounting"
+			(at 149.86 176.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "stack_mounting.kicad_sch"
+			(at 149.86 196.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "15")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 149.86 106.68)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "3cdbfd5b-42cc-5950-b437-0f910f706981")
+		(property "Sheetname" "Power Input"
+			(at 149.86 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "power_input_power_input.kicad_sch"
+			(at 149.86 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 149.86 35.56)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "513609f0-3bc3-572e-be50-36febb41090f")
+		(property "Sheetname" "H Bridge B"
+			(at 149.86 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "h_bridge_h_bridge_b.kicad_sch"
+			(at 149.86 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 22.86 177.8)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "66bb5b06-9332-5205-a3aa-d2e4c62903cb")
+		(property "Sheetname" "Output encoder"
+			(at 22.86 176.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "encoder_output_output_encoder.kicad_sch"
+			(at 22.86 196.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 149.86 142.24)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "865ba13a-d8d0-5bb3-9132-345a336950af")
+		(property "Sheetname" "Mezzanine interface"
+			(at 149.86 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "mezzanine.kicad_sch"
+			(at 149.86 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "12")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 22.86 106.68)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "92b9aaa4-f4aa-5708-8abd-13d87174e28a")
+		(property "Sheetname" "fan"
+			(at 22.86 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "fan_fan.kicad_sch"
+			(at 22.86 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 276.86 106.68)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "97059a84-6ebe-580b-a79b-9b63016ab908")
+		(property "Sheetname" "H Bridge A"
+			(at 276.86 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "h_bridge_h_bridge_a.kicad_sch"
+			(at 276.86 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 276.86 35.56)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a69d6381-4db1-5501-b98f-a37828030649")
+		(property "Sheetname" "Bulk Capacitance"
+			(at 276.86 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "bulk_capacitance_bulk_capacitance.kicad_sch"
+			(at 276.86 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 149.86 71.12)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d50a4e61-760f-544e-a58e-3a32d440700f")
+		(property "Sheetname" "Gate Driver"
+			(at 149.86 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "gate_driver_gate_driver.kicad_sch"
+			(at 149.86 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 276.86 142.24)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ec1f0291-76c0-58b9-aecc-735ef77a31a5")
+		(property "Sheetname" "Rotor encoder"
+			(at 276.86 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "rotor_encoder.kicad_sch"
+			(at 276.86 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/a6c8bea9-6c3c-5459-b6bb-fedc441bf17d"
+					(page "14")
+				)
+			)
+		)
+	)
+)

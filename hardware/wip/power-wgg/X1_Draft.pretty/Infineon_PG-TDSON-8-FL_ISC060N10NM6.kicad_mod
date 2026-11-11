@@ -1,0 +1,183 @@
+(footprint "Infineon_PG-TDSON-8-FL_ISC060N10NM6"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Infineon PG-TDSON-8 FL (5x6 mm) board pads per ISC060N10NM6 datasheet Rev 2.2 Figure 2 (recommended copper): pins 1-3 source, 4 gate, 5-8 drain")
+	(tags "Infineon OptiMOS TDSON-8 FL")
+	(property "Reference" "REF**"
+		(at 0 -4.4 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Infineon_PG-TDSON-8-FL_ISC060N10NM6"
+		(at 0 4.4 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(pad "5" smd rect
+		(at 0.0000 -0.6500)
+		(size 4.4100 3.7500)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "5" smd rect
+		(at -1.9050 -2.9250)
+		(size 0.6000 0.8000)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "5" smd rect
+		(at -0.6350 -2.9250)
+		(size 0.6000 0.8000)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "5" smd rect
+		(at 0.6350 -2.9250)
+		(size 0.6000 0.8000)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "5" smd rect
+		(at 1.9050 -2.9250)
+		(size 0.6000 0.8000)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "1" smd rect
+		(at -1.9050 2.5750)
+		(size 0.7700 1.5000)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "2" smd rect
+		(at -0.6350 2.5750)
+		(size 0.7700 1.5000)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "3" smd rect
+		(at 0.6350 2.5750)
+		(size 0.7700 1.5000)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "4" smd rect
+		(at 1.9050 2.3750)
+		(size 0.7700 1.1000)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(fp_line
+		(start -2.4550 -3.5750)
+		(end 2.4550 -3.5750)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+	)
+	(fp_line
+		(start 2.4550 -3.5750)
+		(end 2.4550 3.5750)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+	)
+	(fp_line
+		(start 2.4550 3.5750)
+		(end -2.4550 3.5750)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+	)
+	(fp_line
+		(start -2.4550 3.5750)
+		(end -2.4550 -3.5750)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+	)
+	(fp_line
+		(start -2.5750 -2.9500)
+		(end 2.5750 -2.9500)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+	)
+	(fp_line
+		(start 2.5750 -2.9500)
+		(end 2.5750 2.9500)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+	)
+	(fp_line
+		(start 2.5750 2.9500)
+		(end -2.5750 2.9500)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+	)
+	(fp_line
+		(start -2.5750 2.9500)
+		(end -2.5750 -2.9500)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+	)
+	(fp_line
+		(start -2.7000 -3.4500)
+		(end 2.7000 -3.4500)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -2.7000 3.4500)
+		(end -2.3000 3.4500)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -2.7000 3.4500)
+		(end -2.7000 3.0000)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_circle
+		(center -3.0 2.575)
+		(end -2.85 2.575)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+	)
+)

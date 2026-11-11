@@ -1,0 +1,61 @@
+<!--
+OpenArm v2 bimanual arms on a Pixel-style mobile base, vertical lift and torso pitch.
+
+Layout follows CMU Pixel (arXiv 2611.03648, Sec. III-A): holonomic base 0.455 x 0.535 m,
+telescopic lift with 430 mm travel, cantilevered torso-pitch joint, two 7-DOF arms.
+Pixel's NERO arms are replaced by the stock OpenArm v2 arms (vendor XML, unchanged).
+
+ESTIMATES (not from any source, change when real CAD exists):
+  base mass 30 kg, carriage 3 kg, torso 6 kg with COM 0.20 m above the pitch axis,
+  shoulder mount 0.45 m above the pitch axis, pitch axis 0.10 m above the carriage,
+  base deck at 0.30 m. Forward is +x. Pitch is positive when bending forward.
+The base is three abstract planar joints (x, y, yaw), not modelled swerve modules.
+-->
+<mujoco model="openarm_v2_mobile_lift_torso">
+  <compiler meshdir="../vendor/openarm_mujoco/v2/assets" angle="radian"/>
+  <option timestep="0.001" integrator="implicitfast" cone="elliptic" impratio="10"/>
+
+  <asset>
+    <model name="bimanual" file="../vendor/openarm_mujoco/v2/openarm_bimanual.xml"/>
+    <material name="frame" rgba="0.25 0.25 0.27 1"/>
+    <material name="mast" rgba="0.6 0.6 0.62 1"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" directional="true"/>
+    <geom name="floor" size="0 0 0.05" type="plane" rgba="0.2 0.3 0.4 1"/>
+
+    <body name="base" pos="0 0 0">
+      <joint name="base_x" type="slide" axis="1 0 0" damping="50"/>
+      <joint name="base_y" type="slide" axis="0 1 0" damping="50"/>
+      <joint name="base_yaw" type="hinge" axis="0 0 1" damping="20"/>
+      <inertial pos="0 0 0.12" mass="30" diaginertia="1.0 0.9 1.2"/>
+      <geom name="base_box" type="box" size="0.2275 0.2675 0.13" pos="0 0 0.17" material="frame" contype="0" conaffinity="0"/>
+      <geom name="mast" type="box" size="0.04 0.06 0.30" pos="-0.06 0 0.60" material="mast" contype="0" conaffinity="0"/>
+
+      <body name="lift_carriage" pos="0 0 0.30">
+        <joint name="lift" type="slide" axis="0 0 1" range="0 0.43" limited="true" damping="200" armature="5"/>
+        <inertial pos="0 0 0.05" mass="3" diaginertia="0.02 0.02 0.02"/>
+        <geom name="carriage" type="box" size="0.06 0.10 0.05" pos="0 0 0.05" material="frame" contype="0" conaffinity="0"/>
+
+        <body name="torso" pos="0 0 0.10">
+          <joint name="torso_pitch" type="hinge" axis="0 1 0" range="-0.35 1.75" limited="true" damping="2" armature="0.5"/>
+          <inertial pos="0 0 0.20" mass="6" diaginertia="0.12 0.10 0.04"/>
+          <geom name="torso_box" type="box" size="0.06 0.12 0.20" pos="0 0 0.22" material="frame" contype="0" conaffinity="0"/>
+          <frame pos="0 0 0.45">
+            <attach model="bimanual" prefix=""/>
+          </frame>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <velocity name="base_x_vel" joint="base_x" kv="500" ctrlrange="-1 1"/>
+    <velocity name="base_y_vel" joint="base_y" kv="500" ctrlrange="-1 1"/>
+    <velocity name="base_yaw_vel" joint="base_yaw" kv="200" ctrlrange="-2 2"/>
+    <!-- Wide force ranges on purpose: this model is for sizing the lift and pitch actuators. -->
+    <position name="lift_ctrl" joint="lift" kp="20000" kv="2000" ctrlrange="0 0.43" forcerange="-3000 3000" forcelimited="true"/>
+    <position name="torso_pitch_ctrl" joint="torso_pitch" kp="3000" kv="150" ctrlrange="-0.35 1.75" forcerange="-500 500" forcelimited="true"/>
+  </actuator>
+</mujoco>

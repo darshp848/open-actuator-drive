@@ -1,0 +1,2043 @@
+Plecs {
+  Name          "t_v3"
+  Version       "5.0"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "0.03"
+  Timeout       ""
+  Solver        "radau"
+  MaxStep       "1e-6"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "1e-3"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "2"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "2"
+  AssertionAction "1"
+  InitializationCommands "pp = 21;\nRs = 0.49;\nLs = 0.000275;\nlam = 0.01083;\nJm = 0.0001;\nc_"
+"couple = 10000.0;\nwm0 = 0;\nkp_i = 1.728;\nki_i = 3079;\nv_frac = 0.5"
+"485;\nron = 0.009;\nfsw = 100000.0;\ntd = 1e-07;\nr_hop = 0.01;\nl_hop"
+" = 2e-07;\nc_local = 7.6e-05;\nesr_local = 0.005;\nv0 = 48;\nraw_ts = "
+"1e-06;\nref_t = [0 1];\nref_wm = [0 0];\nref_iq = [0 0];\nref_vb = [48"
+" 48];"
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [0, 53; 1300, 700]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          VoltageSource
+      Name          "Vbank"
+      Show          on
+      Position      [9201, 8001]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Gnd"
+      Show          on
+      Position      [6973, 8941]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am_board"
+      Show          on
+      Position      [8139, 6419]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Resistor
+      Name          "R_hop"
+      Show          on
+      Position      [9085, 9415]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "r_hop"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "L_hop"
+      Show          on
+      Position      [6055, 7655]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "L"
+        Value         "l_hop"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Voltmeter
+      Name          "Vm_board"
+      Show          on
+      Position      [9831, 6835]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Capacitor
+      Name          "C_local"
+      Show          on
+      Position      [7387, 10283]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "C"
+        Value         "c_local"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "v0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R_esr"
+      Show          on
+      Position      [6821, 5729]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "esr_local"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am_cap"
+      Show          on
+      Position      [10585, 8945]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          MosfetWithDiode
+      Name          "QaH"
+      Show          on
+      Position      [5277, 9125]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "ron"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          MosfetWithDiode
+      Name          "QaL"
+      Show          on
+      Position      [9331, 5155]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "ron"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am_a"
+      Show          on
+      Position      [8997, 11181]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          MosfetWithDiode
+      Name          "QbH"
+      Show          on
+      Position      [4947, 6231]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "ron"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          MosfetWithDiode
+      Name          "QbL"
+      Show          on
+      Position      [11635, 7201]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "ron"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am_b"
+      Show          on
+      Position      [5747, 11203]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          MosfetWithDiode
+      Name          "QcH"
+      Show          on
+      Position      [7471, 3925]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "ron"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          MosfetWithDiode
+      Name          "QcL"
+      Show          on
+      Position      [11291, 10773]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Ron"
+        Value         "ron"
+        Show          off
+      }
+      Parameter {
+        Variable      "s_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am_c"
+      Show          on
+      Position      [3505, 8185]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Electrical/Machines/Perm.-Magnet SM"
+      Name          "PMSM"
+      Show          on
+      Position      [11325, 4691]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Frame         [-25, -25; 25, 35]
+      Parameter {
+        Variable      "configuration"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "R"
+        Value         "Rs"
+        Show          off
+      }
+      Parameter {
+        Variable      "L"
+        Value         "[Ls Ls]"
+        Show          off
+      }
+      Parameter {
+        Variable      "phi"
+        Value         "lam"
+        Show          off
+      }
+      Parameter {
+        Variable      "J"
+        Value         "Jm"
+        Show          off
+      }
+      Parameter {
+        Variable      "F"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "p"
+        Value         "pp"
+        Show          off
+      }
+      Parameter {
+        Variable      "wm0"
+        Value         "wm0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thm0"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "is0"
+        Value         "[0 0]"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [-30, -10]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-30, 0]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-30, 10]
+        Direction     left
+      }
+      Terminal {
+        Type          Rotational
+        Position      [30, 30]
+        Direction     right
+      }
+    }
+    Component {
+      Type          ControlledRotationalSpeed
+      Name          "Spd"
+      Show          on
+      Position      [7775, 12881]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "SecondFlange"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          RotationalDamper
+      Name          "couple"
+      Show          on
+      Position      [4745, 4099]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "D"
+        Value         "c_couple"
+        Show          off
+      }
+      Parameter {
+        Variable      "theta0"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          AngleSensor
+      Name          "Ang"
+      Show          on
+      Position      [13227, 8703]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "SecondFlange"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "theta0"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          AngleSensor
+      Name          "Ang_ctrl"
+      Show          on
+      Position      [3511, 11123]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "SecondFlange"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "theta0"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          CScript
+      Name          "FOC"
+      Show          on
+      Position      [9243, 2477]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "DialogGeometry"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "NumInputs"
+        Value         "5"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumOutputs"
+        Value         "8"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumContStates"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumDiscStates"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NumZCSignals"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DirectFeedthrough"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ts"
+        Value         "1/fsw"
+        Show          off
+      }
+      Parameter {
+        Variable      "TerminalBasedSampleTimes"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Parameters"
+        Value         "pp, Rs, Ls, lam, kp_i, ki_i, v_frac, 1/fsw, ref_t, ref_wm, ref_iq, ref"
+"_vb"
+        Show          off
+      }
+      Parameter {
+        Variable      "LangStandard"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "GnuExtensions"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "RuntimeCheck"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Declarations"
+        Value         "#include <math.h>\n#define P(i) ParamRealData(i, 0)\n#define PP P(0)\n"
+"#define RS P(1)\n#define LS P(2)\n#define LAM P(3)\n#define KP P(4)\n#"
+"define KI P(5)\n#define VFRAC P(6)\n#define TS P(7)\n#define NREF Para"
+"mNumElements(8)\n#define REFT(k) ParamRealData(8, k)\n#define REFW(k) "
+"ParamRealData(9, k)\n#define REFI(k) ParamRealData(10, k)\n#define REF"
+"V(k) ParamRealData(11, k)\nstatic double zd, zq, dn[3], out_wm, out_vb"
+", out_iqr, out_id, out_iq;\nstatic int kref;\nstatic void lookup(doubl"
+"e t, double *w, double *iqr, double *vb)\n{\n    while (kref < NREF - "
+"2 && REFT(kref + 1) <= t) kref++;\n    double t0 = REFT(kref), t1 = RE"
+"FT(kref + 1);\n    double f = (t1 > t0) ? (t - t0)/(t1 - t0) : 0.0;\n "
+"   if (f < 0) f = 0;\n    if (f > 1) f = 1;\n    *w = REFW(kref) + f*("
+"REFW(kref + 1) - REFW(kref));\n    *iqr = REFI(kref) + f*(REFI(kref + "
+"1) - REFI(kref));\n    *vb = REFV(kref) + f*(REFV(kref + 1) - REFV(kre"
+"f));\n}\n"
+        Show          off
+      }
+      Parameter {
+        Variable      "StartFcn"
+        Value         "zd = 0; zq = 0; kref = 0; dn[0] = dn[1] = dn[2] = 0.5; out_id = 0; out"
+"_iq = 0;\nlookup(0.0, &out_wm, &out_iqr, &out_vb);\n"
+        Show          off
+      }
+      Parameter {
+        Variable      "OutputFcn"
+        Value         "OutputSignal(0, 0) = dn[0]; OutputSignal(0, 1) = dn[1]; OutputSignal(0"
+", 2) = dn[2];\nOutputSignal(0, 3) = out_wm; OutputSignal(0, 4) = out_v"
+"b; OutputSignal(0, 5) = out_iqr;\nOutputSignal(0, 6) = out_id; OutputS"
+"ignal(0, 7) = out_iq;\n"
+        Show          off
+      }
+      Parameter {
+        Variable      "UpdateFcn"
+        Value         "double ia = InputSignal(0, 0), ib = InputSignal(0, 1), ic = InputSigna"
+"l(0, 2);\ndouble thm = InputSignal(0, 3), vb = InputSignal(0, 4);\ndou"
+"ble t = CurrentTime;\nlookup(t + TS, &out_wm, &out_iqr, &out_vb);\ndou"
+"ble th = PP*thm, we = PP*out_wm, a = 2.0*M_PI/3.0;\ndouble id = 2.0/3."
+"0*(ia*cos(th) + ib*cos(th - a) + ic*cos(th + a));\ndouble iq = -2.0/3."
+"0*(ia*sin(th) + ib*sin(th - a) + ic*sin(th + a));\ndouble ed = -id, eq"
+" = out_iqr - iq;\ndouble vd = KP*ed + zd - we*LS*iq;\ndouble vq = KP*e"
+"q + zq + we*LAM + we*LS*id;\ndouble vmax = VFRAC*(vb > 1 ? vb : 1);\nd"
+"ouble vm = sqrt(vd*vd + vq*vq);\ndouble s = (vm > vmax) ? vmax/vm : 1."
+"0;\nvd *= s; vq *= s;\nif (s >= 0.999) { zd += KI*ed*TS; zq += KI*eq*T"
+"S; }\ndouble tha = th + 1.5*we*TS;\ndouble v[3], vmx, vmn;\nv[0] = vd*"
+"cos(tha) - vq*sin(tha);\nv[1] = vd*cos(tha - a) - vq*sin(tha - a);\nv["
+"2] = vd*cos(tha + a) - vq*sin(tha + a);\nvmx = fmax(v[0], fmax(v[1], v"
+"[2])); vmn = fmin(v[0], fmin(v[1], v[2]));\nfor (int k = 0; k < 3; k++"
+") {\n    double d = 0.5 + (v[k] - 0.5*(vmx + vmn))/(vb > 1 ? vb : 1);\"
+"n    dn[k] = d < 0 ? 0 : (d > 1 ? 1 : d);\n}\nout_id = id; out_iq = iq"
+";\n"
+        Show          off
+      }
+      Parameter {
+        Variable      "DerivativeFcn"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "TerminateFcn"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "StoreCustomStateFcn"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "RestoreCustomStateFcn"
+        Value         ""
+        Show          off
+      }
+    }
+    Component {
+      Type          SignalMux
+      Name          "meas_mux"
+      Show          on
+      Position      [10911, 13081]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Width"
+        Value         "[1 1 1 1 1]"
+        Show          off
+      }
+    }
+    Component {
+      Type          SignalDemux
+      Name          "foc_dm"
+      Show          on
+      Position      [2237, 6161]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Width"
+        Value         "8"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "FOCk"
+      Show          on
+      Position      [13669, 5381]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Value"
+        Value         "[0.5 0.5 0.5 100 48 0 0 0]"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          ToFile
+      Name          "focf"
+      Show          on
+      Position      [5515, 13939]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Filename"
+        Value         "t_foc.csv"
+        Show          off
+      }
+      Parameter {
+        Variable      "FileType"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "WriteSignalNames"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "SampleTime"
+        Value         "1e-5"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "gH_a"
+      Show          on
+      Position      [5755, 1759]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Value"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "gL_a"
+      Show          on
+      Position      [14043, 11175]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Value"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "gH_b"
+      Show          on
+      Position      [1211, 9789]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Value"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "gL_b"
+      Show          on
+      Position      [11901, 1933]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Value"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "gH_c"
+      Show          on
+      Position      [9255, 15301]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Value"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "gL_c"
+      Show          on
+      Position      [1989, 3345]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Value"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net5_0"
+      Show          on
+      Position      [15769, 7357]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net5_1"
+      Show          on
+      Position      [2575, 13865]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net5_2"
+      Show          on
+      Position      [8039, -181]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net7_0"
+      Show          on
+      Position      [13629, 14205]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net7"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net7_1"
+      Show          on
+      Position      [-533, 7209]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net7"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net7_2"
+      Show          on
+      Position      [14983, 2701]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net7"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net9_0"
+      Show          on
+      Position      [6397, 16815]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net9"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net9_1"
+      Show          on
+      Position      [3125, 253]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net9"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net9_2"
+      Show          on
+      Position      [17015, 10471]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net9"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net9_3"
+      Show          on
+      Position      [-487, 12357]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net9"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net9_4"
+      Show          on
+      Position      [11385, -1127]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net9"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net9_5"
+      Show          on
+      Position      [11745, 17197]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net9"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net10_0"
+      Show          on
+      Position      [-1147, 3665]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net10"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net10_1"
+      Show          on
+      Position      [17861, 4961]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net10"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net10_2"
+      Show          on
+      Position      [2685, 17069]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net10"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net11_0"
+      Show          on
+      Position      [5753, -2465]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net11"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net11_1"
+      Show          on
+      Position      [16887, 14313]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net11"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net11_2"
+      Show          on
+      Position      [-3007, 9373]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net11"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net11_3"
+      Show          on
+      Position      [15317, -593]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net11"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net11_4"
+      Show          on
+      Position      [8419, 19475]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net11"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net11_5"
+      Show          on
+      Position      [-193, -315]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net11"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "net11_6"
+      Show          on
+      Position      [19855, 8607]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Tag"
+        Value         "net11"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Vbank"
+      SrcTerminal   1
+      DstComponent  "Am_board"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am_board"
+      SrcTerminal   2
+      DstComponent  "R_hop"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R_hop"
+      SrcTerminal   2
+      DstComponent  "L_hop"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "C_local"
+      SrcTerminal   2
+      DstComponent  "R_esr"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R_esr"
+      SrcTerminal   2
+      DstComponent  "Am_cap"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QaH"
+      SrcTerminal   2
+      DstComponent  "net5_0"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QaL"
+      SrcTerminal   1
+      DstComponent  "net5_1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am_a"
+      SrcTerminal   1
+      DstComponent  "net5_2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am_a"
+      SrcTerminal   2
+      DstComponent  "PMSM"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QbH"
+      SrcTerminal   2
+      DstComponent  "net7_0"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QbL"
+      SrcTerminal   1
+      DstComponent  "net7_1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am_b"
+      SrcTerminal   1
+      DstComponent  "net7_2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am_b"
+      SrcTerminal   2
+      DstComponent  "PMSM"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L_hop"
+      SrcTerminal   2
+      DstComponent  "net9_0"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Vm_board"
+      SrcTerminal   1
+      DstComponent  "net9_1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "C_local"
+      SrcTerminal   1
+      DstComponent  "net9_2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QaH"
+      SrcTerminal   1
+      DstComponent  "net9_3"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QbH"
+      SrcTerminal   1
+      DstComponent  "net9_4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QcH"
+      SrcTerminal   1
+      DstComponent  "net9_5"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QcH"
+      SrcTerminal   2
+      DstComponent  "net10_0"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QcL"
+      SrcTerminal   1
+      DstComponent  "net10_1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am_c"
+      SrcTerminal   1
+      DstComponent  "net10_2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Gnd"
+      SrcTerminal   1
+      DstComponent  "net11_0"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Vbank"
+      SrcTerminal   2
+      DstComponent  "net11_1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Vm_board"
+      SrcTerminal   2
+      DstComponent  "net11_2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am_cap"
+      SrcTerminal   2
+      DstComponent  "net11_3"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QaL"
+      SrcTerminal   2
+      DstComponent  "net11_4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QbL"
+      SrcTerminal   2
+      DstComponent  "net11_5"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "QcL"
+      SrcTerminal   2
+      DstComponent  "net11_6"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am_c"
+      SrcTerminal   2
+      DstComponent  "PMSM"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Rotational
+      SrcComponent  "PMSM"
+      SrcTerminal   4
+      Points        [11370, 4736]
+      Branch {
+        DstComponent  "couple"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "Ang"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "Ang_ctrl"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Rotational
+      SrcComponent  "couple"
+      SrcTerminal   2
+      DstComponent  "Spd"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am_a"
+      SrcTerminal   3
+      DstComponent  "meas_mux"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am_b"
+      SrcTerminal   3
+      DstComponent  "meas_mux"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am_c"
+      SrcTerminal   3
+      DstComponent  "meas_mux"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Ang_ctrl"
+      SrcTerminal   2
+      DstComponent  "meas_mux"
+      DstTerminal   5
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Vm_board"
+      SrcTerminal   3
+      DstComponent  "meas_mux"
+      DstTerminal   6
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "meas_mux"
+      SrcTerminal   1
+      DstComponent  "FOC"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "FOCk"
+      SrcTerminal   1
+      DstComponent  "foc_dm"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "FOC"
+      SrcTerminal   2
+      DstComponent  "focf"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "foc_dm"
+      SrcTerminal   5
+      DstComponent  "Spd"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "foc_dm"
+      SrcTerminal   6
+      DstComponent  "Vbank"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "gH_a"
+      SrcTerminal   1
+      DstComponent  "QaH"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "gL_a"
+      SrcTerminal   1
+      DstComponent  "QaL"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "gH_b"
+      SrcTerminal   1
+      DstComponent  "QbH"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "gL_b"
+      SrcTerminal   1
+      DstComponent  "QbL"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "gH_c"
+      SrcTerminal   1
+      DstComponent  "QcH"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "gL_c"
+      SrcTerminal   1
+      DstComponent  "QcL"
+      DstTerminal   3
+    }
+  }
+}

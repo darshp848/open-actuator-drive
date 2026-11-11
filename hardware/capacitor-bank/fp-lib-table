@@ -1,0 +1,10 @@
+(fp_lib_table
+	(version 7)
+	(lib
+		(name "External")
+		(type "KiCad")
+		(uri "${KIPRJMOD}/External.pretty")
+		(options "")
+		(descr "Self-contained draft footprints")
+	)
+)

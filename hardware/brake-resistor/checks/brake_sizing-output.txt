@@ -1,0 +1,29 @@
+Chopper on: 1304 W bank, 326 W per resistor, 22.8 A
+One burst with no regen: 0.17 ms, 52 mJ per resistor; cold limit 1.16 J (5 %)
+Backup channel: 1495 W bank
+
+Continuous rating (heatsink <= 80 C, thermostat lowest opening): 41 W at 40 C ambient, 61 W at 25 C
+  at 41 W: sink 80 C, case 90 C, element 106 C; LTO100 allows 56 W at that case temperature
+
+WGG rotor KE (J_rotor 1.5e-04 kg m2 assumed): 8.0 J at 390 rpm, 35.3 J at 819 rpm
+
+| Case | Profile | Average W | Peak element C | Peak sink C | Verdict |
+|---|---|---|---|---|---|
+| A1 | P96 arm lift6 cycle (system model): 28 J every 3.5 s | 8 | 55 | 50 | fits |
+| A2 | P96 arm fast pick-and-place: J1+J2 lower 6 kg at 3 rad/s, 2 x 70 W for 0.52 s every 2 s | 36 | 99 | 76 | fits |
+| A3 | P96 gates-off fall, J1+J2+J4 (brake-resistor-check-20261025): 140 J in 0.65 s, from A2 hot | event 140 J | 160 | 76 | fits |
+| A4 | P96 arm e-stop from the J1 speed limit: arm + payload KE about 30 J returned in 0.1 s, from A2 hot | event 30 J | 140 | 76 | fits |
+| W1 | 3 x WGG8108 gait-like braking: each 160 W for 0.1 s per 1 s step, two in phase | 32 | 92 | 72 | fits |
+| W2 | 3 x WGG8108 stop from 819 rpm: rotor KE 106 J + 50 J load (requirements regen_event_j), at the 1.3 kW chopper limit, from W1 hot | event 156 J | 308 | 73 | too hot |
+| W3 | 1 x WGG8108 continuous braking at nominal 10.2 Nm and 390 rpm (dyno, winch): bounding, NOT supported | 341 | 483 | 270 | exceeds rating |
+| F1 | Support-board forced discharge on RUN open: 3 mF from 54 V | event 5 J | 67 | 40 | fits |
+
+Event limit from a bank already at the 41 W continuous rating (element <= 165 C):
+| Event energy | Max bank power | Shortest duration |
+|---|---|---|
+| 10 J | 1176 W | 0.01 s |
+| 25 J | 664 W | 0.04 s |
+| 50 J | 370 W | 0.14 s |
+| 100 J | 251 W | 0.40 s |
+| 150 J | 203 W | 0.74 s |
+| 300 J | 154 W | 1.95 s |

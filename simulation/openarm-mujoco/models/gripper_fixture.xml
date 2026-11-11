@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="openarm_v2_gripper_contact_fixture">
+  <option timestep="0.001" integrator="implicitfast" cone="elliptic" impratio="10" />
+  <asset>
+    <model name="arm_pedestal" file="../vendor/openarm_mujoco/v2/pedestal/openarm_pedestal.xml" />
+  </asset>
+  <worldbody>
+    <light pos="0 -1 2" dir="0 0 -1" directional="true" />
+    <geom name="floor" type="plane" size="2 2 .05" rgba=".22 .25 .3 1" />
+    <attach model="arm_pedestal" prefix="" />
+    <geom name="clamp_probe" type="sphere" size=".015" pos="0.37599999836600539 -0.1525 0.47199987712511915" rgba=".95 .35 .12 1" friction="1 .01 .01" solref=".005 1" solimp=".95 .99 .001" condim="4" />
+  </worldbody>
+  <keyframe>
+    <key name="home" qpos="0 0 0 1.5707960000000001 0 0 0 0.34999999999999998 0.34999999999999998 0 0 0 1.5707960000000001 0 0 0 -0.34999999999999998 -0.34999999999999998" ctrl="0 0 0 1.5707960000000001 0 0 0 0.34999999999999998 0 0 0 1.5707960000000001 0 0 0 -0.34999999999999998" />
+  </keyframe>
+</mujoco>

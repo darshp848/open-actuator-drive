@@ -1,0 +1,251 @@
+{
+ "provenance": {
+  "commit": "db5e76c",
+  "files": [
+   "per_joint/gearbox_data.json stock_actuators",
+   "results/per_joint/calibration.json",
+   "alternatives.json joints.*.reference"
+  ],
+  "note": "the per_joint code carries NO electrical parameters (turns, R, L, lambda) for stock actuators; only published ratio/torque/mass/size, a model mass and model continuous torque from the nearest sweep motor, and a modelled reflected inertia"
+ },
+ "published_and_modelled": {
+  "SteadyWin GIM8108-36": {
+   "published": {
+    "model": "SteadyWin GIM8108-36",
+    "ratio": 36,
+    "stages": 2,
+    "T_rated": 32.76,
+    "T_peak": 109.5,
+    "mass_kg_driver": 0.76,
+    "mass_kg_bare": 0.72,
+    "OD_mm": 96,
+    "len_mm_bare": 44.5,
+    "len_mm_driver": 57,
+    "stator_od_mm": 81,
+    "stack_mm": 8,
+    "source": "steadywin.cn/en/pd.jsp?id=16"
+   },
+   "model": {
+    "model": "SteadyWin GIM8108-36",
+    "mass_pub": 0.76,
+    "mass_model": 0.7932726233050875,
+    "mass_err": 0.04377976750669399,
+    "m_active": 0.20577188936825225,
+    "T_rated_pub": 32.76,
+    "T_cont_model": 32.76,
+    "T_peak_pub": 109.5,
+    "T_peak_model_J24": 53.85389431764878,
+    "motor_used": "PJ_NdFeB_R45.5_36s42p_hm2.0",
+    "J_cont": 14.585881927442884
+   }
+  },
+  "SteadyWin GIM8115-36 (Y, 48 V, GDS810)": {
+   "published": {
+    "model": "SteadyWin GIM8115-36 (Y, 48 V, GDS810)",
+    "ratio": 36,
+    "stages": 2,
+    "T_rated": 54,
+    "T_peak": 228,
+    "mass_kg_driver": 0.96,
+    "mass_kg_bare": 0.92,
+    "OD_mm": 96,
+    "len_mm_bare": 51.5,
+    "len_mm_driver": 64,
+    "stator_od_mm": 81,
+    "stack_mm": 15,
+    "source": "steadywin.cn/en/h-pd-19.html"
+   },
+   "model": {
+    "model": "SteadyWin GIM8115-36 (Y, 48 V, GDS810)",
+    "mass_pub": 0.96,
+    "mass_model": 1.0744448524190384,
+    "mass_err": 0.1192133879364985,
+    "m_active": 0.37326726955308076,
+    "T_rated_pub": 54,
+    "T_cont_model": 52.079635681292686,
+    "T_peak_pub": 228,
+    "T_peak_model_J24": 101.99913827978689,
+    "motor_used": "PJ_NdFeB_R45.5_36s42p_hm2.0",
+    "J_cont": 12.237118132047254
+   }
+  },
+  "SteadyWin GIM4310-40": {
+   "published": {
+    "model": "SteadyWin GIM4310-40",
+    "ratio": 40,
+    "stages": 2,
+    "T_rated": 8.5,
+    "T_peak": 30.59,
+    "mass_kg_driver": 0.3645,
+    "mass_kg_bare": 0.3367,
+    "OD_mm": 57,
+    "len_mm_bare": 46,
+    "len_mm_driver": 56,
+    "stator_od_mm": 43,
+    "stack_mm": 10,
+    "source": "steadywin.cn/en/h-pd-198.html"
+   },
+   "model": {
+    "model": "SteadyWin GIM4310-40",
+    "mass_pub": 0.3645,
+    "mass_model": 0.34072371738880947,
+    "mass_err": -0.06522985627212763,
+    "m_active": 0.08028505687226511,
+    "T_rated_pub": 8.5,
+    "T_cont_model": 7.311280824379501,
+    "T_peak_pub": 30.59,
+    "T_peak_model_J24": 8.847573073428627,
+    "motor_used": "PJ_NdFeB_R25.0_36s42p_hm2.0",
+    "J_cont": 19.832404960351365
+   }
+  },
+  "SteadyWin GIM8108-8": {
+   "published": {
+    "model": "SteadyWin GIM8108-8",
+    "ratio": 8,
+    "stages": 1,
+    "T_rated": 7.5,
+    "T_peak": 22,
+    "mass_kg_driver": 0.396,
+    "mass_kg_bare": 0.375,
+    "OD_mm": null,
+    "len_mm_bare": null,
+    "len_mm_driver": null,
+    "stator_od_mm": 81,
+    "stack_mm": 8,
+    "source": "openelab.com and aifitlab.com listings (reseller data)"
+   },
+   "model": null
+  },
+  "DAMIAO DM-J8009P-2EC": {
+   "published": {
+    "model": "DAMIAO DM-J8009P-2EC",
+    "ratio": 9,
+    "stages": 1,
+    "T_rated": 20,
+    "T_peak": 40,
+    "mass_kg_driver": 0.896,
+    "OD_mm": 98,
+    "len_mm_driver": 61.7,
+    "stator_od_mm": 80,
+    "stack_mm": 9,
+    "source": "docs.openarm.dev/hardware/openarm-2.0/motor; stator size and stack read from the model number (estimate)"
+   },
+   "model": {
+    "model": "DAMIAO DM-J8009P-2EC",
+    "mass_pub": 0.896,
+    "mass_model": 0.7761527682227468,
+    "mass_err": -0.13375807117997007,
+    "m_active": 0.22969980082322775,
+    "T_rated_pub": 20,
+    "T_cont_model": 9.733895380381028,
+    "T_peak_pub": 40,
+    "T_peak_model_J24": 15.982049029536826,
+    "motor_used": "PJ_NdFeB_R45.5_36s42p_hm2.0",
+    "J_cont": 14.603649009176067
+   }
+  },
+  "DAMIAO DM-J4340-2EC": {
+   "published": {
+    "model": "DAMIAO DM-J4340-2EC",
+    "ratio": 40,
+    "stages": 2,
+    "T_rated": 9,
+    "T_peak": 27,
+    "mass_kg_driver": 0.362,
+    "OD_mm": 57,
+    "len_mm_driver": 53.3,
+    "stator_od_mm": 43,
+    "stack_mm": 10,
+    "source": "docs.openarm.dev; stack estimate"
+   },
+   "model": {
+    "model": "DAMIAO DM-J4340-2EC",
+    "mass_pub": 0.362,
+    "mass_model": 0.33861526314745244,
+    "mass_err": -0.06459872058714788,
+    "m_active": 0.08028505687226511,
+    "T_rated_pub": 9,
+    "T_cont_model": 7.193533158364366,
+    "T_peak_pub": 27,
+    "T_peak_model_J24": 8.847573073428627,
+    "motor_used": "PJ_NdFeB_R25.0_36s42p_hm2.0",
+    "J_cont": 19.51298358130151
+   }
+  },
+  "DAMIAO DM-J4310-2EC": {
+   "published": {
+    "model": "DAMIAO DM-J4310-2EC",
+    "ratio": 10,
+    "stages": 1,
+    "T_rated": 3,
+    "T_peak": 7,
+    "mass_kg_driver": 0.3,
+    "OD_mm": 56,
+    "len_mm_driver": 46,
+    "stator_od_mm": 43,
+    "stack_mm": 10,
+    "source": "docs.openarm.dev; stack estimate"
+   },
+   "model": {
+    "model": "DAMIAO DM-J4310-2EC",
+    "mass_pub": 0.3,
+    "mass_model": 0.2898232919351863,
+    "mass_err": -0.033922360216045666,
+    "m_active": 0.08028505687226511,
+    "T_rated_pub": 3,
+    "T_cont_model": 1.7846632614387965,
+    "T_peak_pub": 7,
+    "T_peak_model_J24": 2.3283087035338492,
+    "motor_used": "PJ_NdFeB_R25.0_36s42p_hm2.0",
+    "J_cont": 18.395833613702084
+   }
+  }
+ },
+ "reference_per_joint": {
+  "J1": {
+   "model": "SteadyWin GIM8115-36 (Y, 48 V, GDS810)",
+   "ratio": 36,
+   "J_reflected": 0.31800678264596494,
+   "J_reflected_basis": "model (PJ_NdFeB_R45.5_36s42p_hm2.0 at 15 mm stack, same rotor-inertia model as the picks)",
+   "mass_kg": 0.96,
+   "OD": 96,
+   "length": 64,
+   "envelope_from": "SteadyWin GIM8115-36 (Y, 48 V, GDS810)",
+   "src": "steadywin.cn/en/h-pd-19.html"
+  },
+  "J3": {
+   "model": "SteadyWin GIM8108-36",
+   "ratio": 36,
+   "J_reflected": 0.1696036174111813,
+   "J_reflected_basis": "model (PJ_NdFeB_R45.5_36s42p_hm2.0 at 8 mm stack, same rotor-inertia model as the picks)",
+   "mass_kg": 0.76,
+   "OD": 96,
+   "length": 57,
+   "envelope_from": "SteadyWin GIM8108-36",
+   "src": "steadywin.cn/en/pd.jsp?id=16"
+  },
+  "J5": {
+   "model": "SteadyWin GIM4310-40",
+   "ratio": 40,
+   "J_reflected": 0.03007104343731731,
+   "J_reflected_basis": "model (PJ_NdFeB_R25.0_36s42p_hm2.0 at 10 mm stack, same rotor-inertia model as the picks)",
+   "mass_kg": 0.3645,
+   "OD": 57,
+   "length": 56,
+   "envelope_from": "SteadyWin GIM4310-40",
+   "src": "steadywin.cn/en/h-pd-198.html"
+  },
+  "Torso": {
+   "model": "DAMIAO DM-J10422P-2EC",
+   "ratio": 22,
+   "J_reflected": 0.2952540507418959,
+   "J_reflected_basis": "measured (bench sysid, whole actuator)",
+   "mass_kg": 2.7,
+   "OD": 96,
+   "length": 64,
+   "envelope_from": "SteadyWin GIM8115-36 (Y, 48 V, GDS810)",
+   "src": "open_mabel 2f9229f: mabel_full.xml (22:1, 2.7 kg), calibration/motor_calibration/results/DM-J10422P/params.json (bench-identified output inertia 0.295 kg m^2). No published outline was found (vendor pages give only an image), so the torso size case uses the arm's largest GIM envelope, GIM8115-36, instead: can the torso share the shoulder's housing?"
+  }
+ }
+}

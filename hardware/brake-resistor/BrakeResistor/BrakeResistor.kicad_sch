@@ -1,0 +1,886 @@
+(kicad_sch
+	(version 20250114)
+	(generator "x1_brake_resistor")
+	(generator_version "10.0")
+	(uuid "da12f172-9cc1-4daa-b867-d5d2822a679c")
+	(paper "A4")
+	(title_block (title "X1 brake resistor board") (date "2026-11-02") (rev "B")
+		(comment 1 "2.5 ohm bank for the support board chopper; sizing in brake_sizing.py"))
+	(lib_symbols
+(symbol "Device:R"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 0 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "R_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "R_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+(symbol "Switch:SW_SPST"
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "SW"
+			(at 0 3.175 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_SPST"
+			(at 0 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Single Pole Single Throw (SPST) switch"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "switch lever"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "SW_SPST_0_0"
+			(circle
+				(center -2.032 0)
+				(radius 0.508)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.524 0.254) (xy 1.524 1.778)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center 2.032 0)
+				(radius 0.508)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "SW_SPST_1_1"
+			(pin passive line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 5.08 0 180)
+				(length 2.54)
+				(name "B"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+(symbol "Connector_Generic:Conn_01x02"
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 0 -5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "connector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_01x02_1_1"
+			(rectangle
+				(start -1.27 1.27)
+				(end 1.27 -3.81)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(rectangle
+				(start -1.27 0.127)
+				(end 0 -0.127)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 -2.413)
+				(end 0 -2.667)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 3.81)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -2.54 0)
+				(length 3.81)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+(symbol "Mechanical:Heatsink"
+		(pin_names
+			(offset 1.016)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "HS"
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Heatsink"
+			(at 0 -1.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0.3048 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0.3048 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Heatsink"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "thermal heat temperature"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Heatsink_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Heatsink_0_1"
+			(polyline
+				(pts
+					(xy -0.3302 1.27) (xy -0.9652 1.27) (xy -0.9652 3.81) (xy -1.6002 3.81) (xy -1.6002 1.27) (xy -2.2352 1.27)
+					(xy -2.2352 3.81) (xy -2.8702 3.81) (xy -2.8702 0) (xy -0.9652 0)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.3302 1.27) (xy -0.3302 3.81) (xy 0.3048 3.81) (xy 0.3048 1.27) (xy 0.9398 1.27) (xy 0.9398 3.81)
+					(xy 1.5748 3.81) (xy 1.5748 1.27) (xy 2.2098 1.27) (xy 2.2098 3.81) (xy 2.8448 3.81) (xy 2.8448 0)
+					(xy -0.9652 0)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+(symbol "Mechanical:MountingHole"
+		(pin_names
+			(offset 1.016)
+		)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "H"
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 3.175 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "mounting hole"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "MountingHole*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "MountingHole_0_1"
+			(circle
+				(center 0 0)
+				(radius 1.27)
+				(stroke
+					(width 1.27)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	)
+	(symbol (lib_id "Device:R") (at 50.80 81.28 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "eee375bc-886e-4941-889b-9b46e4cda9d5")
+		(property "Reference" "R1" (at 53.80 75.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10R LTO100" (at 53.80 87.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "BrakeResistor:LTO100_on_Ohmite_RA-T2X-64E" (at 53.80 89.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 53.80 91.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "LTO100F10R00JTE3" (at 53.80 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "Vishay Sfernice" (at 53.80 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "LT100J-10-ND" (at 53.80 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(pin "1" (uuid "5ad3b084-60a6-4b70-b0df-e3838f3ab059"))
+		(pin "2" (uuid "1c45ef53-e326-4412-895d-21a7b6d88bce"))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "R1") (unit 1))))
+	)
+	(global_label "BUS+" (shape passive) (at 50.80 77.47 90) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "0f4666c1-ac1e-4aa5-8f69-21162fd92127"))
+	(global_label "BRK_SW" (shape passive) (at 50.80 85.09 270) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "7d0fc79c-cfd1-4a81-a30d-fe96e3568e34"))
+	(symbol (lib_id "Device:R") (at 76.20 81.28 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "1c50d0d5-1382-43b5-921e-644a5858a238")
+		(property "Reference" "R2" (at 79.20 75.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10R LTO100" (at 79.20 87.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "BrakeResistor:LTO100_on_Ohmite_RA-T2X-64E" (at 79.20 89.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 79.20 91.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "LTO100F10R00JTE3" (at 79.20 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "Vishay Sfernice" (at 79.20 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "LT100J-10-ND" (at 79.20 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(pin "1" (uuid "9996b58f-aa79-427c-9216-f484c1342e32"))
+		(pin "2" (uuid "ca18622d-ff7a-4d25-afe7-73ad4acb8ffa"))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "R2") (unit 1))))
+	)
+	(global_label "BUS+" (shape passive) (at 76.20 77.47 90) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "2e5781a7-0fb1-4ee5-a014-6aeeb7a23805"))
+	(global_label "BRK_SW" (shape passive) (at 76.20 85.09 270) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "3503e6f7-7297-4f86-ab36-74d5e3564707"))
+	(symbol (lib_id "Device:R") (at 101.60 81.28 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "5a36512e-804e-45ae-9a11-95667745f5d0")
+		(property "Reference" "R3" (at 104.60 75.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10R LTO100" (at 104.60 87.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "BrakeResistor:LTO100_on_Ohmite_RA-T2X-64E" (at 104.60 89.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 104.60 91.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "LTO100F10R00JTE3" (at 104.60 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "Vishay Sfernice" (at 104.60 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "LT100J-10-ND" (at 104.60 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(pin "1" (uuid "d3db9f7a-3c7b-4927-8813-e2e9041fbf9f"))
+		(pin "2" (uuid "1d58e8cd-a368-4151-a1b9-80742f770f1e"))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "R3") (unit 1))))
+	)
+	(global_label "BUS+" (shape passive) (at 101.60 77.47 90) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "960562a2-cfed-445b-9009-1215d1b69496"))
+	(global_label "BRK_SW" (shape passive) (at 101.60 85.09 270) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "aae3d9d2-2d5f-4ee4-b173-e1b8de47369e"))
+	(symbol (lib_id "Device:R") (at 127.00 81.28 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "f558dff1-16e4-4b99-a929-491504f498c0")
+		(property "Reference" "R4" (at 130.00 75.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10R LTO100" (at 130.00 87.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "BrakeResistor:LTO100_on_Ohmite_RA-T2X-64E" (at 130.00 89.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 130.00 91.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "LTO100F10R00JTE3" (at 130.00 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "Vishay Sfernice" (at 130.00 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "LT100J-10-ND" (at 130.00 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(pin "1" (uuid "7a947d9b-3cf6-4f6e-85b7-4086bd138f1d"))
+		(pin "2" (uuid "8773edd0-92cd-4d11-9cb2-7f35de9faabe"))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "R4") (unit 1))))
+	)
+	(global_label "BUS+" (shape passive) (at 127.00 77.47 90) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "6010ed0e-bdc5-4e5f-8291-e50f57eaf186"))
+	(global_label "BRK_SW" (shape passive) (at 127.00 85.09 270) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "a3ad590c-f850-408f-8652-aa2d177cb0fa"))
+	(symbol (lib_id "Switch:SW_SPST") (at 177.80 81.28 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "20ae5129-847f-4306-a991-26706ee78a4a")
+		(property "Reference" "SW1" (at 180.80 75.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "67L085P NC opens 85C" (at 180.80 87.28 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "BrakeResistor:Airpax_67L_TO-220-2_on_RA-T2X_web" (at 180.80 89.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 180.80 91.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "67L085P" (at 180.80 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "Sensata Airpax" (at 180.80 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "723-1348-ND" (at 180.80 93.28 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(pin "1" (uuid "594c4d5b-84b7-486a-8537-a84f5a9fa0d2"))
+		(pin "2" (uuid "18b5b322-2e35-413f-9afe-68bbb78277ca"))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "SW1") (unit 1))))
+	)
+	(global_label "TH_GND" (shape passive) (at 172.72 81.28 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "911d0bb7-d7e3-4db9-83bd-24fb6c1b6c8a"))
+	(global_label "TH_OPEN" (shape passive) (at 182.88 81.28 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "4838c05d-59d3-4c40-a13c-ac5302713861"))
+	(symbol (lib_id "Connector_Generic:Conn_01x02") (at 50.80 132.08 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "6ad442c8-c987-4616-8e29-b7e228aae7fc")
+		(property "Reference" "J1" (at 53.80 126.08 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "to support J4" (at 53.80 138.08 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "BrakeResistor:PowerWire_P8" (at 53.80 140.08 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 53.80 142.08 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(pin "1" (uuid "2a63448c-2010-4d12-ade7-3c41f0a40a01"))
+		(pin "2" (uuid "3410c031-8394-41de-a8ad-6f9c25344f95"))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "J1") (unit 1))))
+	)
+	(global_label "BUS+" (shape passive) (at 45.72 132.08 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "0f9ea061-97ae-4080-9e20-d7560fdd7147"))
+	(global_label "BRK_SW" (shape passive) (at 45.72 134.62 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "32efd30f-7976-412a-aef1-eb7e30085176"))
+	(symbol (lib_id "Connector_Generic:Conn_01x02") (at 177.80 132.08 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "34e9566f-864b-4133-97e2-b5ad3ad42572")
+		(property "Reference" "J2" (at 180.80 126.08 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "to support J6 (JST PH)" (at 180.80 138.08 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical" (at 180.80 140.08 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 180.80 142.08 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "B2B-PH-K-S" (at 180.80 144.08 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "JST" (at 180.80 144.08 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "455-1704-ND" (at 180.80 144.08 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(pin "1" (uuid "49e9a690-b132-42cd-b222-98e85bcc347e"))
+		(pin "2" (uuid "8677c09c-79a8-4a4c-b244-599d7632836c"))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "J2") (unit 1))))
+	)
+	(global_label "TH_OPEN" (shape passive) (at 172.72 132.08 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "bf13b8f6-e282-47a3-956c-e51026872209"))
+	(global_label "TH_GND" (shape passive) (at 172.72 134.62 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "6b69709d-bd33-4a2c-b664-871175cb98c8"))
+	(symbol (lib_id "Mechanical:Heatsink") (at 50.80 109.22 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board no) (dnp no)
+		(uuid "0c2af29d-27ba-4794-bbac-9bbc91bf9e6a")
+		(property "Reference" "HS1" (at 53.80 103.22 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "RA-T2X-64E" (at 53.80 115.22 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "" (at 53.80 117.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 53.80 119.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "RA-T2X-64E" (at 53.80 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "Ohmite" (at 53.80 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "RA-T2X-64E-ND" (at 53.80 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "HS1") (unit 1))))
+	)
+	(symbol (lib_id "Mechanical:Heatsink") (at 76.20 109.22 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board no) (dnp no)
+		(uuid "624906da-e3d7-46de-8a4e-dd157f4da24e")
+		(property "Reference" "HS2" (at 79.20 103.22 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "RA-T2X-64E" (at 79.20 115.22 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "" (at 79.20 117.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 79.20 119.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "RA-T2X-64E" (at 79.20 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "Ohmite" (at 79.20 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "RA-T2X-64E-ND" (at 79.20 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "HS2") (unit 1))))
+	)
+	(symbol (lib_id "Mechanical:Heatsink") (at 101.60 109.22 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board no) (dnp no)
+		(uuid "de1867d3-f5c6-4d6c-a274-11f9454c47a7")
+		(property "Reference" "HS3" (at 104.60 103.22 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "RA-T2X-64E" (at 104.60 115.22 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "" (at 104.60 117.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 104.60 119.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "RA-T2X-64E" (at 104.60 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "Ohmite" (at 104.60 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "RA-T2X-64E-ND" (at 104.60 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "HS3") (unit 1))))
+	)
+	(symbol (lib_id "Mechanical:Heatsink") (at 127.00 109.22 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board no) (dnp no)
+		(uuid "2789ce3f-a370-4a79-8bec-5c932574f1e2")
+		(property "Reference" "HS4" (at 130.00 103.22 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "RA-T2X-64E" (at 130.00 115.22 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "" (at 130.00 117.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 130.00 119.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "MPN" "RA-T2X-64E" (at 130.00 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Manufacturer" "Ohmite" (at 130.00 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "DigiKey" "RA-T2X-64E-ND" (at 130.00 121.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "HS4") (unit 1))))
+	)
+	(symbol (lib_id "Mechanical:MountingHole") (at 101.60 160.02 0) (unit 1)
+		(exclude_from_sim no) (in_bom no) (on_board yes) (dnp no)
+		(uuid "587f107a-9095-4fd1-b26f-f6e705e6bdc3")
+		(property "Reference" "H1" (at 104.60 154.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "M3" (at 104.60 166.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 104.60 168.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 104.60 170.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "H1") (unit 1))))
+	)
+	(symbol (lib_id "Mechanical:MountingHole") (at 116.84 160.02 0) (unit 1)
+		(exclude_from_sim no) (in_bom no) (on_board yes) (dnp no)
+		(uuid "353256ae-3415-4327-bc9c-1af6e4e2bc38")
+		(property "Reference" "H2" (at 119.84 154.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "M3" (at 119.84 166.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 119.84 168.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 119.84 170.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "H2") (unit 1))))
+	)
+	(symbol (lib_id "Mechanical:MountingHole") (at 132.08 160.02 0) (unit 1)
+		(exclude_from_sim no) (in_bom no) (on_board yes) (dnp no)
+		(uuid "f9ba745b-6f6b-4e24-8830-e7f3f8587f87")
+		(property "Reference" "H3" (at 135.08 154.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "M3" (at 135.08 166.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 135.08 168.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 135.08 170.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "H3") (unit 1))))
+	)
+	(symbol (lib_id "Mechanical:MountingHole") (at 147.32 160.02 0) (unit 1)
+		(exclude_from_sim no) (in_bom no) (on_board yes) (dnp no)
+		(uuid "f960dcac-8a3f-44e1-9616-0f1272906840")
+		(property "Reference" "H4" (at 150.32 154.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "M3" (at 150.32 166.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 150.32 168.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 150.32 170.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "H4") (unit 1))))
+	)
+	(symbol (lib_id "Mechanical:MountingHole") (at 162.56 160.02 0) (unit 1)
+		(exclude_from_sim no) (in_bom no) (on_board yes) (dnp no)
+		(uuid "934c83ec-7e2c-44c9-9d0e-05b4791de363")
+		(property "Reference" "H5" (at 165.56 154.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "M3" (at 165.56 166.02 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 165.56 168.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(property "Datasheet" "" (at 165.56 170.02 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+		(instances (project "BrakeResistor" (path "/da12f172-9cc1-4daa-b867-d5d2822a679c" (reference "H5") (unit 1))))
+	)
+	(text "Brake resistor bank for the X1 support board chopper (Q3). 4 x 10 ohm LTO100 in parallel = 2.5 ohm." (exclude_from_sim no) (at 30 190 0)
+		(effects (font (size 1.6 1.6)) (justify left bottom)) (uuid "831346a4-6f35-474f-bc2a-04ea93e0940f"))
+	(text "J1 -> support J4 (1 = BUS+, 2 = BRK_SW), 16 AWG pair. J2 -> support J6 (JST PH to PH, 1 = TH_OPEN, 2 = GND)." (exclude_from_sim no) (at 30 196 0)
+		(effects (font (size 1.6 1.6)) (justify left bottom)) (uuid "9575a264-789a-4602-9da0-091af153278e"))
+	(text "Each R on its own Ohmite RA-T2X-64E with silicone grease, M3 screw 1 Nm. SW1 (67L085P, plastic bracket)" (exclude_from_sim no) (at 30 202 0)
+		(effects (font (size 1.6 1.6)) (justify left bottom)) (uuid "e1bd7dda-25ce-4abd-9f7f-ad914e741989"))
+	(text "shares R4's screw on the far face of HS4's web. SW1 opens at 85 +/- 5 C: support blocks forced discharge." (exclude_from_sim no) (at 30 208 0)
+		(effects (font (size 1.6 1.6)) (justify left bottom)) (uuid "be1fc850-67cf-4f3a-a12e-08f150bbb985"))
+	(text "Rating (brake_sizing.py): 41 W average at 40 C ambient; events up to 150 J at <= 200 W from hot." (exclude_from_sim no) (at 30 214 0)
+		(effects (font (size 1.6 1.6)) (justify left bottom)) (uuid "dd384e37-9c60-4763-bb76-0f62257bc970"))
+	(sheet_instances (path "/" (page "1")))
+)

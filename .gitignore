@@ -1,0 +1,14 @@
+*.kicad_prl
+*-backups/
+~*.lck
+fp-info-cache
+\#auto_saved_files#
+__pycache__/
+.venv*/
+results/
+slprj/
+*.slxc
+*.mexw64
+*.asv
+build/
+vendor/

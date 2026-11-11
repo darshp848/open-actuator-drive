@@ -1,0 +1,11 @@
+Ref,Qty,Manufacturer,MPN,DigiKey PN,DigiKey stock 2026-11-02,Unit price (qty 1),Note
+R1 R2 R3 R4,4,Vishay Sfernice,LTO100F10R00JTE3,LT100J-10-ND,593,$6.67,10 ohm 5% 100 W TO-247; 4 in parallel = 2.5 ohm
+HS1 HS2 HS3 HS4,4,Ohmite,RA-T2X-64E,RA-T2X-64E-ND,691,$6.05,board-level heatsink 63.5 mm; 3.1 C/W natural; solder pins
+SW1,1,Sensata Airpax,67L085P,723-1348-ND,834,$9.32,NC thermostat opens 85 +/-5 C; plastic (isolated) bracket; on HS4 web
+J2,1,JST,B2B-PH-K-S(LF)(SN),455-1704-ND,365547,$0.12,thermostat loop header
+cable,2,JST,PHR-2,455-1165-ND,564656,$0.10,housings: one each end of the J2-to-support-J6 lead
+cable,2,JST,ASPHSPH24K305,455-3083-ND,9392,$0.50,pre-crimped 12 in PH leads (cut to length or use 152 = 6 in)
+J1,1,-,16 AWG silicone wire pair,-,-,-,solder to J1 and to support J4 (8 mm pads both ends)
+hardware,3,-,M3 x 10 pan head + nut + split washer,-,-,-,R1-R3: LTO100 to heatsink at 1 Nm
+hardware,1,-,M3 x 12 pan head + nut + split washer,-,-,-,R4 + SW1 + HS4 web stack
+hardware,1,-,silicone thermal grease,-,-,-,LTO100 back face to heatsink (Vishay: about 1 C/W)

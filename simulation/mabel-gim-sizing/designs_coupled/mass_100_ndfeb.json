@@ -1,0 +1,1309 @@
+{
+ "set": "mass_100_ndfeb",
+ "magnet": "ndfeb",
+ "case": "coupled.mass_100",
+ "provenance": {
+  "repo": "/home/inspiron/projects/motor_control_research/Motor_Control_NN_Pipeline",
+  "commit": "aafde1a",
+  "cad_index": "robot_rotor/cad/per_joint/index.json",
+  "files": [
+   "robot_rotor/results/per_joint/coupled.json"
+  ],
+  "export_script": "export_coupled.py",
+  "converged": true,
+  "passes": 2,
+  "arm_mass_kg": 3.1471189940972217,
+  "torso": "torso_resized (sized for this set's arm masses)",
+  "group_mapping": "J2/J4/J6/J7 reuse the J1/J3/J5 CAD entry when the pick is identical"
+ },
+ "joints": {
+  "Arm1": {
+   "motor_name": "PJ_NdFeB_R40.0_48s56p_hm1.5",
+   "magnet": "ndfeb",
+   "R_outer_mm": 40.0,
+   "L_stack_mm": 7.0,
+   "OD_mm": 86.0,
+   "length_mm": 36.344671273359964,
+   "mass_kg": 0.6655827300041126,
+   "mass_breakdown_kg": {
+    "m_active": 0.11875718795080856,
+    "m_magnet": 0.015987676129884082,
+    "m_gear": 0.2010118795889805,
+    "m_struct": 0.2808136624643235,
+    "m_board": 0.065
+   },
+   "gearbox": {
+    "type": "planetary2",
+    "ratio": 100,
+    "eta": 0.9025,
+    "mass_kg": 0.2010118795889805,
+    "mass_note": "m_gear is inside mass_kg (actuator total); the rig mass change uses mass_kg, so the gearbox mass is included",
+    "own_inertia": "NOT MODELLED in the per_joint code (no gearbox inertia in actuator.py); J_reflected = J_rotor * ratio^2 is rotor inertia only, so gearbox inertia is not lumped anywhere",
+    "backlash_arcmin": 15.0,
+    "backlash_rad": 0.004363323129985824,
+    "stiffness_Nm_arcmin": 12.408140715369166,
+    "k_gear_Nm_rad": 42656.04567570548,
+    "backdrive_Nm_output": 0.9926512572295333
+   },
+   "N": 100,
+   "eta": 0.9025,
+   "pp": 28,
+   "kt_m": 0.1156256507221481,
+   "kt_m_note": "motor torque at J_p divided by I_peak (Nm per A peak phase, motor side); includes saturation at the peak point",
+   "kt_m_from_lambda": 0.11563355336292357,
+   "lam": 0.0027531798419743706,
+   "lam_note": "N_turns * psi_d(J_p), 8 mm FEMM table interpolated and scaled by (L-dL)/8, the code's own flux basis (analysis.py, pf definition)",
+   "R": 0.34511890666109757,
+   "R_note": "Pcu_peak / (1.5 I_peak^2), star phase; same from the continuous point: 0.3451 ohm",
+   "L": 0.00012668525531225113,
+   "L_note": "N^2 * Lq8 * (L-dL)/8, q-axis inductance per phase (actuator.py)",
+   "i_max": 6.283355913661911,
+   "i_cont_rms": 3.3625781526904843,
+   "J_rotor": 4.8524089172739286e-05,
+   "J_rotor_note": "direct value Motor.Jrot(L) = Jrot8*L/8; J_reflected/N^2 = 4.9018e-05 (identical)",
+   "J_reflected": 0.4901755357097973,
+   "tau_coulomb_out": 0.9926512572295333,
+   "tau_coulomb_note": "backdrive_Nm (gear start torque, output side) used as the Coulomb term; the rig adds (1-eta)|tau_m| load-dependent friction as for GIM",
+   "b_visc_out": null,
+   "b_visc_note": "ASSUMED: the code has no viscous term; the rig sets it from the GIM-class ratio b/tau_c",
+   "w_motor_peak": 300.0,
+   "w_out_design_peak": 3.0,
+   "T_peak_out_Nm": 65.56816974030043,
+   "T_peak_required_Nm": 65.32219197941622,
+   "T_cont_required_Nm": 49.44676632329536,
+   "design_point_V_over_vmax": 0.9938035434959996,
+   "N_turns": 10.392385417593657,
+   "J_p_Apmm2": 18.866388845547583,
+   "iron_loss_and_cogging": "not in the per_joint model",
+   "cad": {
+    "index_key": "J1_ndfeb_NdFeB_R40p0_48s56p_hm1p5_planetary2100_L7_b66",
+    "index_joint": "J1",
+    "mass_kg": 0.6655827300041126,
+    "cad_mass_scale": 1.003235382835216,
+    "com_m": [
+     -4.2658574668272676e-16,
+     -1.027048431176931e-18,
+     0.0152179193776361
+    ],
+    "inertia_about_com_kgm2": [
+     [
+      0.0003845357431487015,
+      2.1149914360343535e-20,
+      -1.9042772310168278e-20
+     ],
+     [
+      2.1149914360343535e-20,
+      0.00038453574314869685,
+      -4.744334016333191e-21
+     ],
+     [
+      -1.9042772310168278e-20,
+      -4.744334016333191e-21,
+      0.0006282062749606251
+     ]
+    ],
+    "rotor_inertia_cad_kgm2": 5.942065711081838e-05,
+    "rotor_inertia_model_kgm2": 4.8524089172739286e-05,
+    "reflected_inertia_output_cad_kgm2": 0.5990953816123304,
+    "reflected_inertia_output_model_kgm2": 0.4852408917273929,
+    "gearbox": {
+     "mass_kg": 0.19914363882579839,
+     "com_m": [
+      -2.5350535427110164e-16,
+      -1.607182919447196e-18,
+      0.007240623788551961
+     ],
+     "inertia_about_com_kgm2": [
+      [
+       7.752035494641852e-05,
+       -1.3980618983807384e-20,
+       1.1934985089283029e-20
+      ],
+      [
+       -1.3980618983807384e-20,
+       7.752035494641731e-05,
+       -1.340444114737047e-21
+      ],
+      [
+       1.1934985089283029e-20,
+       -1.340444114737047e-21,
+       0.00015271877469011957
+      ]
+     ],
+     "inertia_motor_side_kgm2": 4.888272008594785e-07,
+     "inertia_reflected_output_kgm2": 0.0048882720085947845
+    },
+    "note": "CAD index of the Inspiron thread; reflected = CAD rotor + gearbox input, output side; the old per_joint model values are kept in J_rotor / J_reflected"
+   },
+   "source_fields": {
+    "motor": "PJ_NdFeB_R40.0_48s56p_hm1.5",
+    "family": "ndfeb",
+    "R": 40.0,
+    "L": 7.0,
+    "gear": "planetary2",
+    "ratio": 100,
+    "board": "REVA electrical, outline fitted to the housing (simulated, not laid out)",
+    "board_variant": true,
+    "board_D": 66.0,
+    "mass": 0.6655827300041126,
+    "m_active": 0.11875718795080856,
+    "m_magnet": 0.015987676129884082,
+    "m_gear": 0.2010118795889805,
+    "m_struct": 0.2808136624643235,
+    "m_board": 0.065,
+    "OD": 86.0,
+    "length": 36.344671273359964,
+    "volume_l": 0.21111910154634922,
+    "P_allow": 12.773820540612885,
+    "Pcu_cont": 11.706707855639191,
+    "Pcu_peak": 20.438232348411745,
+    "J_c": 14.278563111426807,
+    "J_p": 18.866388845547583,
+    "N_turns": 10.392385417593657,
+    "I_peak": 6.283355913661911,
+    "I_cont_rms": 3.3625781526904843,
+    "ripple_pp_A": 1.5787156880020823,
+    "ripple_frac": 0.3319835310470514,
+    "J_reflected": 0.4901755357097973,
+    "J_rotor": 4.8524089172739286e-05,
+    "J_gear_motor_side": 4.934643982404505e-07,
+    "J_reflected_rotor_only": 0.4852408917273929,
+    "eta_gear": 0.9025,
+    "backdrive_Nm": 0.9926512572295333,
+    "backlash_arcmin": 15.0,
+    "stiffness_Nm_arcmin": 12.408140715369166,
+    "w_motor_peak": 300.0,
+    "eta_actuator": 0.7800657957587106,
+    "board_loss_cont_W": 1.2406835539714276
+   },
+   "source": "coupled.json sets.mass_100_ndfeb.picks.J1"
+  },
+  "Arm2": {
+   "motor_name": "PJ_NdFeB_R40.0_48s56p_hm1.5",
+   "magnet": "ndfeb",
+   "R_outer_mm": 40.0,
+   "L_stack_mm": 7.0,
+   "OD_mm": 86.0,
+   "length_mm": 36.344671273359964,
+   "mass_kg": 0.6655827300041126,
+   "mass_breakdown_kg": {
+    "m_active": 0.11875718795080856,
+    "m_magnet": 0.015987676129884082,
+    "m_gear": 0.2010118795889805,
+    "m_struct": 0.2808136624643235,
+    "m_board": 0.065
+   },
+   "gearbox": {
+    "type": "planetary2",
+    "ratio": 100,
+    "eta": 0.9025,
+    "mass_kg": 0.2010118795889805,
+    "mass_note": "m_gear is inside mass_kg (actuator total); the rig mass change uses mass_kg, so the gearbox mass is included",
+    "own_inertia": "NOT MODELLED in the per_joint code (no gearbox inertia in actuator.py); J_reflected = J_rotor * ratio^2 is rotor inertia only, so gearbox inertia is not lumped anywhere",
+    "backlash_arcmin": 15.0,
+    "backlash_rad": 0.004363323129985824,
+    "stiffness_Nm_arcmin": 12.408140715369166,
+    "k_gear_Nm_rad": 42656.04567570548,
+    "backdrive_Nm_output": 0.9926512572295333
+   },
+   "N": 100,
+   "eta": 0.9025,
+   "pp": 28,
+   "kt_m": 0.1156256507221481,
+   "kt_m_note": "motor torque at J_p divided by I_peak (Nm per A peak phase, motor side); includes saturation at the peak point",
+   "kt_m_from_lambda": 0.11563355336292357,
+   "lam": 0.0027531798419743706,
+   "lam_note": "N_turns * psi_d(J_p), 8 mm FEMM table interpolated and scaled by (L-dL)/8, the code's own flux basis (analysis.py, pf definition)",
+   "R": 0.34511890666109757,
+   "R_note": "Pcu_peak / (1.5 I_peak^2), star phase; same from the continuous point: 0.3451 ohm",
+   "L": 0.00012668525531225113,
+   "L_note": "N^2 * Lq8 * (L-dL)/8, q-axis inductance per phase (actuator.py)",
+   "i_max": 6.283355913661911,
+   "i_cont_rms": 3.3625781526904843,
+   "J_rotor": 4.8524089172739286e-05,
+   "J_rotor_note": "direct value Motor.Jrot(L) = Jrot8*L/8; J_reflected/N^2 = 4.9018e-05 (identical)",
+   "J_reflected": 0.4901755357097973,
+   "tau_coulomb_out": 0.9926512572295333,
+   "tau_coulomb_note": "backdrive_Nm (gear start torque, output side) used as the Coulomb term; the rig adds (1-eta)|tau_m| load-dependent friction as for GIM",
+   "b_visc_out": null,
+   "b_visc_note": "ASSUMED: the code has no viscous term; the rig sets it from the GIM-class ratio b/tau_c",
+   "w_motor_peak": 300.0,
+   "w_out_design_peak": 3.0,
+   "T_peak_out_Nm": 65.56816974030043,
+   "T_peak_required_Nm": 65.56816974030045,
+   "T_cont_required_Nm": 49.63256286147667,
+   "design_point_V_over_vmax": 0.9938035434959996,
+   "N_turns": 10.392385417593657,
+   "J_p_Apmm2": 18.866388845547583,
+   "iron_loss_and_cogging": "not in the per_joint model",
+   "cad": {
+    "index_key": "J1_ndfeb_NdFeB_R40p0_48s56p_hm1p5_planetary2100_L7_b66",
+    "index_joint": "J1",
+    "mass_kg": 0.6655827300041126,
+    "cad_mass_scale": 1.003235382835216,
+    "com_m": [
+     -4.2658574668272676e-16,
+     -1.027048431176931e-18,
+     0.0152179193776361
+    ],
+    "inertia_about_com_kgm2": [
+     [
+      0.0003845357431487015,
+      2.1149914360343535e-20,
+      -1.9042772310168278e-20
+     ],
+     [
+      2.1149914360343535e-20,
+      0.00038453574314869685,
+      -4.744334016333191e-21
+     ],
+     [
+      -1.9042772310168278e-20,
+      -4.744334016333191e-21,
+      0.0006282062749606251
+     ]
+    ],
+    "rotor_inertia_cad_kgm2": 5.942065711081838e-05,
+    "rotor_inertia_model_kgm2": 4.8524089172739286e-05,
+    "reflected_inertia_output_cad_kgm2": 0.5990953816123304,
+    "reflected_inertia_output_model_kgm2": 0.4852408917273929,
+    "gearbox": {
+     "mass_kg": 0.19914363882579839,
+     "com_m": [
+      -2.5350535427110164e-16,
+      -1.607182919447196e-18,
+      0.007240623788551961
+     ],
+     "inertia_about_com_kgm2": [
+      [
+       7.752035494641852e-05,
+       -1.3980618983807384e-20,
+       1.1934985089283029e-20
+      ],
+      [
+       -1.3980618983807384e-20,
+       7.752035494641731e-05,
+       -1.340444114737047e-21
+      ],
+      [
+       1.1934985089283029e-20,
+       -1.340444114737047e-21,
+       0.00015271877469011957
+      ]
+     ],
+     "inertia_motor_side_kgm2": 4.888272008594785e-07,
+     "inertia_reflected_output_kgm2": 0.0048882720085947845
+    },
+    "note": "CAD index of the Inspiron thread; reflected = CAD rotor + gearbox input, output side; the old per_joint model values are kept in J_rotor / J_reflected"
+   },
+   "source_fields": {
+    "motor": "PJ_NdFeB_R40.0_48s56p_hm1.5",
+    "family": "ndfeb",
+    "R": 40.0,
+    "L": 7.0,
+    "gear": "planetary2",
+    "ratio": 100,
+    "board": "REVA electrical, outline fitted to the housing (simulated, not laid out)",
+    "board_variant": true,
+    "board_D": 66.0,
+    "mass": 0.6655827300041126,
+    "m_active": 0.11875718795080856,
+    "m_magnet": 0.015987676129884082,
+    "m_gear": 0.2010118795889805,
+    "m_struct": 0.2808136624643235,
+    "m_board": 0.065,
+    "OD": 86.0,
+    "length": 36.344671273359964,
+    "volume_l": 0.21111910154634922,
+    "P_allow": 12.773820540612885,
+    "Pcu_cont": 11.706707855639191,
+    "Pcu_peak": 20.438232348411745,
+    "J_c": 14.278563111426807,
+    "J_p": 18.866388845547583,
+    "N_turns": 10.392385417593657,
+    "I_peak": 6.283355913661911,
+    "I_cont_rms": 3.3625781526904843,
+    "ripple_pp_A": 1.5787156880020823,
+    "ripple_frac": 0.3319835310470514,
+    "J_reflected": 0.4901755357097973,
+    "J_rotor": 4.8524089172739286e-05,
+    "J_gear_motor_side": 4.934643982404505e-07,
+    "J_reflected_rotor_only": 0.4852408917273929,
+    "eta_gear": 0.9025,
+    "backdrive_Nm": 0.9926512572295333,
+    "backlash_arcmin": 15.0,
+    "stiffness_Nm_arcmin": 12.408140715369166,
+    "w_motor_peak": 300.0,
+    "eta_actuator": 0.7800657957587106,
+    "board_loss_cont_W": 1.2406835539714276
+   },
+   "source": "coupled.json sets.mass_100_ndfeb.picks.J2"
+  },
+  "Arm3": {
+   "motor_name": "PJ_NdFeB_R30.0_36s42p_hm1.5",
+   "magnet": "ndfeb",
+   "R_outer_mm": 30.0,
+   "L_stack_mm": 10.0,
+   "OD_mm": 66.0,
+   "length_mm": 39.095978481254434,
+   "mass_kg": 0.4678947435247661,
+   "mass_breakdown_kg": {
+    "m_active": 0.10345228379280148,
+    "m_magnet": 0.016831166817649436,
+    "m_gear": 0.11309791978462642,
+    "m_struct": 0.19581997612731986,
+    "m_board": 0.055524563820018365
+   },
+   "gearbox": {
+    "type": "planetary2",
+    "ratio": 100,
+    "eta": 0.9025,
+    "mass_kg": 0.11309791978462642,
+    "mass_note": "m_gear is inside mass_kg (actuator total); the rig mass change uses mass_kg, so the gearbox mass is included",
+    "own_inertia": "NOT MODELLED in the per_joint code (no gearbox inertia in actuator.py); J_reflected = J_rotor * ratio^2 is rotor inertia only, so gearbox inertia is not lumped anywhere",
+    "backlash_arcmin": 15.0,
+    "backlash_rad": 0.004363323129985824,
+    "stiffness_Nm_arcmin": 6.981353073125088,
+    "k_gear_Nm_rad": 24000.12398284528,
+    "backdrive_Nm_output": 0.558508245850007
+   },
+   "N": 100,
+   "eta": 0.9025,
+   "pp": 21,
+   "kt_m": 0.11544000042601225,
+   "kt_m_note": "motor torque at J_p divided by I_peak (Nm per A peak phase, motor side); includes saturation at the peak point",
+   "kt_m_from_lambda": 0.11544382084986035,
+   "lam": 0.0036648832015828683,
+   "lam_note": "N_turns * psi_d(J_p), 8 mm FEMM table interpolated and scaled by (L-dL)/8, the code's own flux basis (analysis.py, pf definition)",
+   "R": 0.7220555021098866,
+   "R_note": "Pcu_peak / (1.5 I_peak^2), star phase; same from the continuous point: 0.7221 ohm",
+   "L": 0.00020836602454632445,
+   "L_note": "N^2 * Lq8 * (L-dL)/8, q-axis inductance per phase (actuator.py)",
+   "i_max": 3.717940018858083,
+   "i_cont_rms": 1.8951023974147956,
+   "J_rotor": 2.82971621366257e-05,
+   "J_rotor_note": "direct value Motor.Jrot(L) = Jrot8*L/8; J_reflected/N^2 = 2.8455e-05 (identical)",
+   "J_reflected": 0.28454993485320623,
+   "tau_coulomb_out": 0.558508245850007,
+   "tau_coulomb_note": "backdrive_Nm (gear start torque, output side) used as the Coulomb term; the rig adds (1-eta)|tau_m| load-dependent friction as for GIM",
+   "b_visc_out": null,
+   "b_visc_note": "ASSUMED: the code has no viscous term; the rig sets it from the GIM-class ratio b/tau_c",
+   "w_motor_peak": 300.0,
+   "w_out_design_peak": 3.0,
+   "T_peak_out_Nm": 38.73520951181808,
+   "T_peak_required_Nm": 38.64850004411839,
+   "T_cont_required_Nm": 27.838152090273574,
+   "design_point_V_over_vmax": 0.9963605829327478,
+   "N_turns": 12.97943115390715,
+   "J_p_Apmm2": 19.694783534497233,
+   "iron_loss_and_cogging": "not in the per_joint model",
+   "cad": {
+    "index_key": "J3_ndfeb_NdFeB_R30p0_36s42p_hm1p5_planetary2100_L10_b61",
+    "index_joint": "J3",
+    "mass_kg": 0.4678947435247661,
+    "cad_mass_scale": 1.0004696129874309,
+    "com_m": [
+     -2.9537452162712657e-16,
+     -1.3838257515105362e-18,
+     0.017300712468466393
+    ],
+    "inertia_about_com_kgm2": [
+     [
+      0.00019218374751126723,
+      2.3001976222378792e-20,
+      -1.0440821224555152e-19
+     ],
+     [
+      2.3001976222378792e-20,
+      0.00019218374714595766,
+      9.604532556316932e-22
+     ],
+     [
+      -1.0440821224555152e-19,
+      9.604532556316932e-22,
+      0.0002662614973338815
+     ]
+    ],
+    "rotor_inertia_cad_kgm2": 3.1780792252128204e-05,
+    "rotor_inertia_model_kgm2": 2.82971621366257e-05,
+    "reflected_inertia_output_cad_kgm2": 0.3193838277837052,
+    "reflected_inertia_output_model_kgm2": 0.282971621366257,
+    "gearbox": {
+     "mass_kg": 0.11291488593458597,
+     "com_m": [
+      -1.8202887982853019e-16,
+      9.312931007864086e-19,
+      0.007207443731622138
+     ],
+     "inertia_about_com_kgm2": [
+      [
+       2.5298509549284427e-05,
+       1.4415356418711517e-21,
+       4.7299062769841486e-21
+      ],
+      [
+       1.4415356418711517e-21,
+       2.5298509549284115e-05,
+       -9.094007940374487e-22
+      ],
+      [
+       4.7299062769841486e-21,
+       -9.094007940374487e-22,
+       4.930230783188966e-05
+      ]
+     ],
+     "inertia_motor_side_kgm2": 1.5757299639803845e-07,
+     "inertia_reflected_output_kgm2": 0.0015757299639803846
+    },
+    "note": "CAD index of the Inspiron thread; reflected = CAD rotor + gearbox input, output side; the old per_joint model values are kept in J_rotor / J_reflected"
+   },
+   "source_fields": {
+    "motor": "PJ_NdFeB_R30.0_36s42p_hm1.5",
+    "family": "ndfeb",
+    "R": 30.0,
+    "L": 10.0,
+    "gear": "planetary2",
+    "ratio": 100,
+    "board": "REVA electrical, outline fitted to the housing (simulated, not laid out)",
+    "board_variant": true,
+    "board_D": 61.0,
+    "mass": 0.4678947435247661,
+    "m_active": 0.10345228379280148,
+    "m_magnet": 0.016831166817649436,
+    "m_gear": 0.11309791978462642,
+    "m_struct": 0.19581997612731986,
+    "m_board": 0.055524563820018365,
+    "OD": 66.0,
+    "length": 39.095978481254434,
+    "volume_l": 0.13375494263317717,
+    "P_allow": 8.907576687566882,
+    "Pcu_cont": 7.779598760437729,
+    "Pcu_peak": 14.971544271473881,
+    "J_c": 14.196997688610535,
+    "J_p": 19.694783534497233,
+    "N_turns": 12.97943115390715,
+    "I_peak": 3.717940018858083,
+    "I_cont_rms": 1.8951023974147956,
+    "ripple_pp_A": 0.9598493825251031,
+    "ripple_frac": 0.35814212900954134,
+    "J_reflected": 0.28454993485320623,
+    "J_rotor": 2.82971621366257e-05,
+    "J_gear_motor_side": 1.578313486949234e-07,
+    "J_reflected_rotor_only": 0.282971621366257,
+    "eta_gear": 0.9025,
+    "backdrive_Nm": 0.558508245850007,
+    "backlash_arcmin": 15.0,
+    "stiffness_Nm_arcmin": 6.981353073125088,
+    "w_motor_peak": 300.0,
+    "eta_actuator": 0.7639368783288055,
+    "board_loss_cont_W": 0.6388839738328941
+   },
+   "source": "coupled.json sets.mass_100_ndfeb.picks.J3"
+  },
+  "Arm4": {
+   "motor_name": "PJ_NdFeB_R30.0_36s42p_hm1.5",
+   "magnet": "ndfeb",
+   "R_outer_mm": 30.0,
+   "L_stack_mm": 10.0,
+   "OD_mm": 66.0,
+   "length_mm": 39.095978481254434,
+   "mass_kg": 0.4678947435247661,
+   "mass_breakdown_kg": {
+    "m_active": 0.10345228379280148,
+    "m_magnet": 0.016831166817649436,
+    "m_gear": 0.11309791978462642,
+    "m_struct": 0.19581997612731986,
+    "m_board": 0.055524563820018365
+   },
+   "gearbox": {
+    "type": "planetary2",
+    "ratio": 100,
+    "eta": 0.9025,
+    "mass_kg": 0.11309791978462642,
+    "mass_note": "m_gear is inside mass_kg (actuator total); the rig mass change uses mass_kg, so the gearbox mass is included",
+    "own_inertia": "NOT MODELLED in the per_joint code (no gearbox inertia in actuator.py); J_reflected = J_rotor * ratio^2 is rotor inertia only, so gearbox inertia is not lumped anywhere",
+    "backlash_arcmin": 15.0,
+    "backlash_rad": 0.004363323129985824,
+    "stiffness_Nm_arcmin": 6.981353073125088,
+    "k_gear_Nm_rad": 24000.12398284528,
+    "backdrive_Nm_output": 0.558508245850007
+   },
+   "N": 100,
+   "eta": 0.9025,
+   "pp": 21,
+   "kt_m": 0.11544000042601225,
+   "kt_m_note": "motor torque at J_p divided by I_peak (Nm per A peak phase, motor side); includes saturation at the peak point",
+   "kt_m_from_lambda": 0.11544382084986035,
+   "lam": 0.0036648832015828683,
+   "lam_note": "N_turns * psi_d(J_p), 8 mm FEMM table interpolated and scaled by (L-dL)/8, the code's own flux basis (analysis.py, pf definition)",
+   "R": 0.7220555021098866,
+   "R_note": "Pcu_peak / (1.5 I_peak^2), star phase; same from the continuous point: 0.7221 ohm",
+   "L": 0.00020836602454632445,
+   "L_note": "N^2 * Lq8 * (L-dL)/8, q-axis inductance per phase (actuator.py)",
+   "i_max": 3.717940018858083,
+   "i_cont_rms": 1.8951023974147956,
+   "J_rotor": 2.82971621366257e-05,
+   "J_rotor_note": "direct value Motor.Jrot(L) = Jrot8*L/8; J_reflected/N^2 = 2.8455e-05 (identical)",
+   "J_reflected": 0.28454993485320623,
+   "tau_coulomb_out": 0.558508245850007,
+   "tau_coulomb_note": "backdrive_Nm (gear start torque, output side) used as the Coulomb term; the rig adds (1-eta)|tau_m| load-dependent friction as for GIM",
+   "b_visc_out": null,
+   "b_visc_note": "ASSUMED: the code has no viscous term; the rig sets it from the GIM-class ratio b/tau_c",
+   "w_motor_peak": 300.0,
+   "w_out_design_peak": 3.0,
+   "T_peak_out_Nm": 38.73520951181808,
+   "T_peak_required_Nm": 38.735209511818084,
+   "T_cont_required_Nm": 27.925412292500347,
+   "design_point_V_over_vmax": 0.9963605829327478,
+   "N_turns": 12.97943115390715,
+   "J_p_Apmm2": 19.694783534497233,
+   "iron_loss_and_cogging": "not in the per_joint model",
+   "cad": {
+    "index_key": "J3_ndfeb_NdFeB_R30p0_36s42p_hm1p5_planetary2100_L10_b61",
+    "index_joint": "J3",
+    "mass_kg": 0.4678947435247661,
+    "cad_mass_scale": 1.0004696129874309,
+    "com_m": [
+     -2.9537452162712657e-16,
+     -1.3838257515105362e-18,
+     0.017300712468466393
+    ],
+    "inertia_about_com_kgm2": [
+     [
+      0.00019218374751126723,
+      2.3001976222378792e-20,
+      -1.0440821224555152e-19
+     ],
+     [
+      2.3001976222378792e-20,
+      0.00019218374714595766,
+      9.604532556316932e-22
+     ],
+     [
+      -1.0440821224555152e-19,
+      9.604532556316932e-22,
+      0.0002662614973338815
+     ]
+    ],
+    "rotor_inertia_cad_kgm2": 3.1780792252128204e-05,
+    "rotor_inertia_model_kgm2": 2.82971621366257e-05,
+    "reflected_inertia_output_cad_kgm2": 0.3193838277837052,
+    "reflected_inertia_output_model_kgm2": 0.282971621366257,
+    "gearbox": {
+     "mass_kg": 0.11291488593458597,
+     "com_m": [
+      -1.8202887982853019e-16,
+      9.312931007864086e-19,
+      0.007207443731622138
+     ],
+     "inertia_about_com_kgm2": [
+      [
+       2.5298509549284427e-05,
+       1.4415356418711517e-21,
+       4.7299062769841486e-21
+      ],
+      [
+       1.4415356418711517e-21,
+       2.5298509549284115e-05,
+       -9.094007940374487e-22
+      ],
+      [
+       4.7299062769841486e-21,
+       -9.094007940374487e-22,
+       4.930230783188966e-05
+      ]
+     ],
+     "inertia_motor_side_kgm2": 1.5757299639803845e-07,
+     "inertia_reflected_output_kgm2": 0.0015757299639803846
+    },
+    "note": "CAD index of the Inspiron thread; reflected = CAD rotor + gearbox input, output side; the old per_joint model values are kept in J_rotor / J_reflected"
+   },
+   "source_fields": {
+    "motor": "PJ_NdFeB_R30.0_36s42p_hm1.5",
+    "family": "ndfeb",
+    "R": 30.0,
+    "L": 10.0,
+    "gear": "planetary2",
+    "ratio": 100,
+    "board": "REVA electrical, outline fitted to the housing (simulated, not laid out)",
+    "board_variant": true,
+    "board_D": 61.0,
+    "mass": 0.4678947435247661,
+    "m_active": 0.10345228379280148,
+    "m_magnet": 0.016831166817649436,
+    "m_gear": 0.11309791978462642,
+    "m_struct": 0.19581997612731986,
+    "m_board": 0.055524563820018365,
+    "OD": 66.0,
+    "length": 39.095978481254434,
+    "volume_l": 0.13375494263317717,
+    "P_allow": 8.907576687566882,
+    "Pcu_cont": 7.779598760437729,
+    "Pcu_peak": 14.971544271473881,
+    "J_c": 14.196997688610535,
+    "J_p": 19.694783534497233,
+    "N_turns": 12.97943115390715,
+    "I_peak": 3.717940018858083,
+    "I_cont_rms": 1.8951023974147956,
+    "ripple_pp_A": 0.9598493825251031,
+    "ripple_frac": 0.35814212900954134,
+    "J_reflected": 0.28454993485320623,
+    "J_rotor": 2.82971621366257e-05,
+    "J_gear_motor_side": 1.578313486949234e-07,
+    "J_reflected_rotor_only": 0.282971621366257,
+    "eta_gear": 0.9025,
+    "backdrive_Nm": 0.558508245850007,
+    "backlash_arcmin": 15.0,
+    "stiffness_Nm_arcmin": 6.981353073125088,
+    "w_motor_peak": 300.0,
+    "eta_actuator": 0.7639368783288055,
+    "board_loss_cont_W": 0.6388839738328941
+   },
+   "source": "coupled.json sets.mass_100_ndfeb.picks.J4"
+  },
+  "Arm5": {
+   "motor_name": "PJ_NdFeB_R25.0_36s42p_hm1.5",
+   "magnet": "ndfeb",
+   "R_outer_mm": 25.0,
+   "L_stack_mm": 8.0,
+   "OD_mm": 56.0,
+   "length_mm": 33.72171902094986,
+   "mass_kg": 0.29338801567982137,
+   "mass_breakdown_kg": {
+    "m_active": 0.061116875756004205,
+    "m_magnet": 0.011079090386069796,
+    "m_gear": 0.05121708852190059,
+    "m_struct": 0.14224206793084218,
+    "m_board": 0.038811983471074375
+   },
+   "gearbox": {
+    "type": "planetary2",
+    "ratio": 100,
+    "eta": 0.9025,
+    "mass_kg": 0.05121708852190059,
+    "mass_note": "m_gear is inside mass_kg (actuator total); the rig mass change uses mass_kg, so the gearbox mass is included",
+    "own_inertia": "NOT MODELLED in the per_joint code (no gearbox inertia in actuator.py); J_reflected = J_rotor * ratio^2 is rotor inertia only, so gearbox inertia is not lumped anywhere",
+    "backlash_arcmin": 15.0,
+    "backlash_rad": 0.004363323129985824,
+    "stiffness_Nm_arcmin": 3.1615486741913945,
+    "k_gear_Nm_rad": 10868.603745380873,
+    "backdrive_Nm_output": 0.25292389393531156
+   },
+   "N": 100,
+   "eta": 0.9025,
+   "pp": 21,
+   "kt_m": 0.10893088948672104,
+   "kt_m_note": "motor torque at J_p divided by I_peak (Nm per A peak phase, motor side); includes saturation at the peak point",
+   "kt_m_from_lambda": 0.1089309494187132,
+   "lam": 0.0034581253783718476,
+   "lam_note": "N_turns * psi_d(J_p), 8 mm FEMM table interpolated and scaled by (L-dL)/8, the code's own flux basis (analysis.py, pf definition)",
+   "R": 2.155517514248053,
+   "R_note": "Pcu_peak / (1.5 I_peak^2), star phase; same from the continuous point: 2.1555 ohm",
+   "L": 0.0003910017319457,
+   "L_note": "N^2 * Lq8 * (L-dL)/8, q-axis inductance per phase (actuator.py)",
+   "i_max": 1.8799089418646595,
+   "i_cont_rms": 0.909573466106442,
+   "J_rotor": 1.2599720896448386e-05,
+   "J_rotor_note": "direct value Motor.Jrot(L) = Jrot8*L/8; J_reflected/N^2 = 1.2649e-05 (identical)",
+   "J_reflected": 0.12649453458974663,
+   "tau_coulomb_out": 0.25292389393531156,
+   "tau_coulomb_note": "backdrive_Nm (gear start torque, output side) used as the Coulomb term; the rig adds (1-eta)|tau_m| load-dependent friction as for GIM",
+   "b_visc_out": null,
+   "b_visc_note": "ASSUMED: the code has no viscous term; the rig sets it from the GIM-class ratio b/tau_c",
+   "w_motor_peak": 300.0,
+   "w_out_design_peak": 3.0,
+   "T_peak_out_Nm": 18.481408825520052,
+   "T_peak_required_Nm": 18.481408825520052,
+   "T_cont_required_Nm": 12.646194696765578,
+   "design_point_V_over_vmax": 0.9970708888188803,
+   "N_turns": 20.305833588308317,
+   "J_p_Apmm2": 23.692173348518473,
+   "iron_loss_and_cogging": "not in the per_joint model",
+   "cad": {
+    "index_key": "J5_ndfeb_NdFeB_R25p0_36s42p_hm1p5_planetary2100_L8_b51",
+    "index_joint": "J5",
+    "mass_kg": 0.29338801567982137,
+    "cad_mass_scale": 0.9999442613649575,
+    "com_m": [
+     -2.313227494002097e-16,
+     2.983117704585453e-22,
+     0.014986147517290603
+    ],
+    "inertia_about_com_kgm2": [
+     [
+      8.810285033875192e-05,
+      2.665731551058325e-21,
+      -7.951789842321991e-20
+     ],
+     [
+      2.665731551058325e-21,
+      8.810285047703994e-05,
+      1.516816243540696e-21
+     ],
+     [
+      -7.951789842321991e-20,
+      1.516816243540696e-21,
+      0.0001200712200991391
+     ]
+    ],
+    "rotor_inertia_cad_kgm2": 1.4298211495341344e-05,
+    "rotor_inertia_model_kgm2": 1.2599720896448386e-05,
+    "reflected_inertia_output_cad_kgm2": 0.143479657216071,
+    "reflected_inertia_output_model_kgm2": 0.12599720896448385,
+    "gearbox": {
+     "mass_kg": 0.05123026501563985,
+     "com_m": [
+      -1.6052117833199952e-16,
+      -3.742692217050501e-18,
+      0.005750502788148024
+     ],
+     "inertia_about_com_kgm2": [
+      [
+       8.022358527814347e-06,
+       2.3677745223327565e-21,
+       1.0627653968360336e-21
+      ],
+      [
+       2.3677745223327565e-21,
+       8.022358527814242e-06,
+       -4.68185648594236e-24
+      ],
+      [
+       1.0627653968360336e-21,
+       -4.68185648594236e-24,
+       1.580281682465628e-05
+      ]
+     ],
+     "inertia_motor_side_kgm2": 4.9745604224661064e-08,
+     "inertia_reflected_output_kgm2": 0.0004974560422466107
+    },
+    "note": "CAD index of the Inspiron thread; reflected = CAD rotor + gearbox input, output side; the old per_joint model values are kept in J_rotor / J_reflected"
+   },
+   "source_fields": {
+    "motor": "PJ_NdFeB_R25.0_36s42p_hm1.5",
+    "family": "ndfeb",
+    "R": 25.0,
+    "L": 8.0,
+    "gear": "planetary2",
+    "ratio": 100,
+    "board": "REVA electrical, outline fitted to the housing (simulated, not laid out)",
+    "board_variant": true,
+    "board_D": 51.0,
+    "mass": 0.29338801567982137,
+    "m_active": 0.061116875756004205,
+    "m_magnet": 0.011079090386069796,
+    "m_gear": 0.05121708852190059,
+    "m_struct": 0.14224206793084218,
+    "m_board": 0.038811983471074375,
+    "OD": 56.0,
+    "length": 33.72171902094986,
+    "volume_l": 0.08305688531822604,
+    "P_allow": 6.470392619536759,
+    "Pcu_cont": 5.3499334061360635,
+    "Pcu_peak": 11.426584675779207,
+    "J_c": 16.211412945676486,
+    "J_p": 23.692173348518473,
+    "N_turns": 20.305833588308317,
+    "I_peak": 1.8799089418646595,
+    "I_cont_rms": 0.909573466106442,
+    "ripple_pp_A": 0.5115066856731336,
+    "ripple_frac": 0.3976477541830603,
+    "J_reflected": 0.12649453458974663,
+    "J_rotor": 1.2599720896448386e-05,
+    "J_gear_motor_side": 4.9732562526277226e-08,
+    "J_reflected_rotor_only": 0.12599720896448385,
+    "eta_gear": 0.9025,
+    "backdrive_Nm": 0.25292389393531156,
+    "backlash_arcmin": 15.0,
+    "stiffness_Nm_arcmin": 3.1615486741913945,
+    "w_motor_peak": 300.0,
+    "eta_actuator": 0.7116404139666272,
+    "board_loss_cont_W": 0.28718667438582085
+   },
+   "source": "coupled.json sets.mass_100_ndfeb.picks.J5"
+  },
+  "Arm6": {
+   "motor_name": "PJ_NdFeB_R25.0_36s42p_hm1.5",
+   "magnet": "ndfeb",
+   "R_outer_mm": 25.0,
+   "L_stack_mm": 8.0,
+   "OD_mm": 56.0,
+   "length_mm": 33.72171902094986,
+   "mass_kg": 0.29338801567982137,
+   "mass_breakdown_kg": {
+    "m_active": 0.061116875756004205,
+    "m_magnet": 0.011079090386069796,
+    "m_gear": 0.05121708852190059,
+    "m_struct": 0.14224206793084218,
+    "m_board": 0.038811983471074375
+   },
+   "gearbox": {
+    "type": "planetary2",
+    "ratio": 100,
+    "eta": 0.9025,
+    "mass_kg": 0.05121708852190059,
+    "mass_note": "m_gear is inside mass_kg (actuator total); the rig mass change uses mass_kg, so the gearbox mass is included",
+    "own_inertia": "NOT MODELLED in the per_joint code (no gearbox inertia in actuator.py); J_reflected = J_rotor * ratio^2 is rotor inertia only, so gearbox inertia is not lumped anywhere",
+    "backlash_arcmin": 15.0,
+    "backlash_rad": 0.004363323129985824,
+    "stiffness_Nm_arcmin": 3.1615486741913945,
+    "k_gear_Nm_rad": 10868.603745380873,
+    "backdrive_Nm_output": 0.25292389393531156
+   },
+   "N": 100,
+   "eta": 0.9025,
+   "pp": 21,
+   "kt_m": 0.10893088948672104,
+   "kt_m_note": "motor torque at J_p divided by I_peak (Nm per A peak phase, motor side); includes saturation at the peak point",
+   "kt_m_from_lambda": 0.1089309494187132,
+   "lam": 0.0034581253783718476,
+   "lam_note": "N_turns * psi_d(J_p), 8 mm FEMM table interpolated and scaled by (L-dL)/8, the code's own flux basis (analysis.py, pf definition)",
+   "R": 2.155517514248053,
+   "R_note": "Pcu_peak / (1.5 I_peak^2), star phase; same from the continuous point: 2.1555 ohm",
+   "L": 0.0003910017319457,
+   "L_note": "N^2 * Lq8 * (L-dL)/8, q-axis inductance per phase (actuator.py)",
+   "i_max": 1.8799089418646595,
+   "i_cont_rms": 0.909573466106442,
+   "J_rotor": 1.2599720896448386e-05,
+   "J_rotor_note": "direct value Motor.Jrot(L) = Jrot8*L/8; J_reflected/N^2 = 1.2649e-05 (identical)",
+   "J_reflected": 0.12649453458974663,
+   "tau_coulomb_out": 0.25292389393531156,
+   "tau_coulomb_note": "backdrive_Nm (gear start torque, output side) used as the Coulomb term; the rig adds (1-eta)|tau_m| load-dependent friction as for GIM",
+   "b_visc_out": null,
+   "b_visc_note": "ASSUMED: the code has no viscous term; the rig sets it from the GIM-class ratio b/tau_c",
+   "w_motor_peak": 300.0,
+   "w_out_design_peak": 3.0,
+   "T_peak_out_Nm": 18.481408825520052,
+   "T_peak_required_Nm": 18.275939133401355,
+   "T_cont_required_Nm": 12.498973575360463,
+   "design_point_V_over_vmax": 0.9970708888188803,
+   "N_turns": 20.305833588308317,
+   "J_p_Apmm2": 23.692173348518473,
+   "iron_loss_and_cogging": "not in the per_joint model",
+   "cad": {
+    "index_key": "J5_ndfeb_NdFeB_R25p0_36s42p_hm1p5_planetary2100_L8_b51",
+    "index_joint": "J5",
+    "mass_kg": 0.29338801567982137,
+    "cad_mass_scale": 0.9999442613649575,
+    "com_m": [
+     -2.313227494002097e-16,
+     2.983117704585453e-22,
+     0.014986147517290603
+    ],
+    "inertia_about_com_kgm2": [
+     [
+      8.810285033875192e-05,
+      2.665731551058325e-21,
+      -7.951789842321991e-20
+     ],
+     [
+      2.665731551058325e-21,
+      8.810285047703994e-05,
+      1.516816243540696e-21
+     ],
+     [
+      -7.951789842321991e-20,
+      1.516816243540696e-21,
+      0.0001200712200991391
+     ]
+    ],
+    "rotor_inertia_cad_kgm2": 1.4298211495341344e-05,
+    "rotor_inertia_model_kgm2": 1.2599720896448386e-05,
+    "reflected_inertia_output_cad_kgm2": 0.143479657216071,
+    "reflected_inertia_output_model_kgm2": 0.12599720896448385,
+    "gearbox": {
+     "mass_kg": 0.05123026501563985,
+     "com_m": [
+      -1.6052117833199952e-16,
+      -3.742692217050501e-18,
+      0.005750502788148024
+     ],
+     "inertia_about_com_kgm2": [
+      [
+       8.022358527814347e-06,
+       2.3677745223327565e-21,
+       1.0627653968360336e-21
+      ],
+      [
+       2.3677745223327565e-21,
+       8.022358527814242e-06,
+       -4.68185648594236e-24
+      ],
+      [
+       1.0627653968360336e-21,
+       -4.68185648594236e-24,
+       1.580281682465628e-05
+      ]
+     ],
+     "inertia_motor_side_kgm2": 4.9745604224661064e-08,
+     "inertia_reflected_output_kgm2": 0.0004974560422466107
+    },
+    "note": "CAD index of the Inspiron thread; reflected = CAD rotor + gearbox input, output side; the old per_joint model values are kept in J_rotor / J_reflected"
+   },
+   "source_fields": {
+    "motor": "PJ_NdFeB_R25.0_36s42p_hm1.5",
+    "family": "ndfeb",
+    "R": 25.0,
+    "L": 8.0,
+    "gear": "planetary2",
+    "ratio": 100,
+    "board": "REVA electrical, outline fitted to the housing (simulated, not laid out)",
+    "board_variant": true,
+    "board_D": 51.0,
+    "mass": 0.29338801567982137,
+    "m_active": 0.061116875756004205,
+    "m_magnet": 0.011079090386069796,
+    "m_gear": 0.05121708852190059,
+    "m_struct": 0.14224206793084218,
+    "m_board": 0.038811983471074375,
+    "OD": 56.0,
+    "length": 33.72171902094986,
+    "volume_l": 0.08305688531822604,
+    "P_allow": 6.470392619536759,
+    "Pcu_cont": 5.3499334061360635,
+    "Pcu_peak": 11.426584675779207,
+    "J_c": 16.211412945676486,
+    "J_p": 23.692173348518473,
+    "N_turns": 20.305833588308317,
+    "I_peak": 1.8799089418646595,
+    "I_cont_rms": 0.909573466106442,
+    "ripple_pp_A": 0.5115066856731336,
+    "ripple_frac": 0.3976477541830603,
+    "J_reflected": 0.12649453458974663,
+    "J_rotor": 1.2599720896448386e-05,
+    "J_gear_motor_side": 4.9732562526277226e-08,
+    "J_reflected_rotor_only": 0.12599720896448385,
+    "eta_gear": 0.9025,
+    "backdrive_Nm": 0.25292389393531156,
+    "backlash_arcmin": 15.0,
+    "stiffness_Nm_arcmin": 3.1615486741913945,
+    "w_motor_peak": 300.0,
+    "eta_actuator": 0.7116404139666272,
+    "board_loss_cont_W": 0.28718667438582085
+   },
+   "source": "coupled.json sets.mass_100_ndfeb.picks.J6"
+  },
+  "Arm7": {
+   "motor_name": "PJ_NdFeB_R25.0_36s42p_hm1.5",
+   "magnet": "ndfeb",
+   "R_outer_mm": 25.0,
+   "L_stack_mm": 8.0,
+   "OD_mm": 56.0,
+   "length_mm": 33.72171902094986,
+   "mass_kg": 0.29338801567982137,
+   "mass_breakdown_kg": {
+    "m_active": 0.061116875756004205,
+    "m_magnet": 0.011079090386069796,
+    "m_gear": 0.05121708852190059,
+    "m_struct": 0.14224206793084218,
+    "m_board": 0.038811983471074375
+   },
+   "gearbox": {
+    "type": "planetary2",
+    "ratio": 100,
+    "eta": 0.9025,
+    "mass_kg": 0.05121708852190059,
+    "mass_note": "m_gear is inside mass_kg (actuator total); the rig mass change uses mass_kg, so the gearbox mass is included",
+    "own_inertia": "NOT MODELLED in the per_joint code (no gearbox inertia in actuator.py); J_reflected = J_rotor * ratio^2 is rotor inertia only, so gearbox inertia is not lumped anywhere",
+    "backlash_arcmin": 15.0,
+    "backlash_rad": 0.004363323129985824,
+    "stiffness_Nm_arcmin": 3.1615486741913945,
+    "k_gear_Nm_rad": 10868.603745380873,
+    "backdrive_Nm_output": 0.25292389393531156
+   },
+   "N": 100,
+   "eta": 0.9025,
+   "pp": 21,
+   "kt_m": 0.10893088948672104,
+   "kt_m_note": "motor torque at J_p divided by I_peak (Nm per A peak phase, motor side); includes saturation at the peak point",
+   "kt_m_from_lambda": 0.1089309494187132,
+   "lam": 0.0034581253783718476,
+   "lam_note": "N_turns * psi_d(J_p), 8 mm FEMM table interpolated and scaled by (L-dL)/8, the code's own flux basis (analysis.py, pf definition)",
+   "R": 2.155517514248053,
+   "R_note": "Pcu_peak / (1.5 I_peak^2), star phase; same from the continuous point: 2.1555 ohm",
+   "L": 0.0003910017319457,
+   "L_note": "N^2 * Lq8 * (L-dL)/8, q-axis inductance per phase (actuator.py)",
+   "i_max": 1.8799089418646595,
+   "i_cont_rms": 0.909573466106442,
+   "J_rotor": 1.2599720896448386e-05,
+   "J_rotor_note": "direct value Motor.Jrot(L) = Jrot8*L/8; J_reflected/N^2 = 1.2649e-05 (identical)",
+   "J_reflected": 0.12649453458974663,
+   "tau_coulomb_out": 0.25292389393531156,
+   "tau_coulomb_note": "backdrive_Nm (gear start torque, output side) used as the Coulomb term; the rig adds (1-eta)|tau_m| load-dependent friction as for GIM",
+   "b_visc_out": null,
+   "b_visc_note": "ASSUMED: the code has no viscous term; the rig sets it from the GIM-class ratio b/tau_c",
+   "w_motor_peak": 300.0,
+   "w_out_design_peak": 3.0,
+   "T_peak_out_Nm": 18.481408825520052,
+   "T_peak_required_Nm": 18.27415141514718,
+   "T_cont_required_Nm": 12.497209146692894,
+   "design_point_V_over_vmax": 0.9970708888188803,
+   "N_turns": 20.305833588308317,
+   "J_p_Apmm2": 23.692173348518473,
+   "iron_loss_and_cogging": "not in the per_joint model",
+   "cad": {
+    "index_key": "J5_ndfeb_NdFeB_R25p0_36s42p_hm1p5_planetary2100_L8_b51",
+    "index_joint": "J5",
+    "mass_kg": 0.29338801567982137,
+    "cad_mass_scale": 0.9999442613649575,
+    "com_m": [
+     -2.313227494002097e-16,
+     2.983117704585453e-22,
+     0.014986147517290603
+    ],
+    "inertia_about_com_kgm2": [
+     [
+      8.810285033875192e-05,
+      2.665731551058325e-21,
+      -7.951789842321991e-20
+     ],
+     [
+      2.665731551058325e-21,
+      8.810285047703994e-05,
+      1.516816243540696e-21
+     ],
+     [
+      -7.951789842321991e-20,
+      1.516816243540696e-21,
+      0.0001200712200991391
+     ]
+    ],
+    "rotor_inertia_cad_kgm2": 1.4298211495341344e-05,
+    "rotor_inertia_model_kgm2": 1.2599720896448386e-05,
+    "reflected_inertia_output_cad_kgm2": 0.143479657216071,
+    "reflected_inertia_output_model_kgm2": 0.12599720896448385,
+    "gearbox": {
+     "mass_kg": 0.05123026501563985,
+     "com_m": [
+      -1.6052117833199952e-16,
+      -3.742692217050501e-18,
+      0.005750502788148024
+     ],
+     "inertia_about_com_kgm2": [
+      [
+       8.022358527814347e-06,
+       2.3677745223327565e-21,
+       1.0627653968360336e-21
+      ],
+      [
+       2.3677745223327565e-21,
+       8.022358527814242e-06,
+       -4.68185648594236e-24
+      ],
+      [
+       1.0627653968360336e-21,
+       -4.68185648594236e-24,
+       1.580281682465628e-05
+      ]
+     ],
+     "inertia_motor_side_kgm2": 4.9745604224661064e-08,
+     "inertia_reflected_output_kgm2": 0.0004974560422466107
+    },
+    "note": "CAD index of the Inspiron thread; reflected = CAD rotor + gearbox input, output side; the old per_joint model values are kept in J_rotor / J_reflected"
+   },
+   "source_fields": {
+    "motor": "PJ_NdFeB_R25.0_36s42p_hm1.5",
+    "family": "ndfeb",
+    "R": 25.0,
+    "L": 8.0,
+    "gear": "planetary2",
+    "ratio": 100,
+    "board": "REVA electrical, outline fitted to the housing (simulated, not laid out)",
+    "board_variant": true,
+    "board_D": 51.0,
+    "mass": 0.29338801567982137,
+    "m_active": 0.061116875756004205,
+    "m_magnet": 0.011079090386069796,
+    "m_gear": 0.05121708852190059,
+    "m_struct": 0.14224206793084218,
+    "m_board": 0.038811983471074375,
+    "OD": 56.0,
+    "length": 33.72171902094986,
+    "volume_l": 0.08305688531822604,
+    "P_allow": 6.470392619536759,
+    "Pcu_cont": 5.3499334061360635,
+    "Pcu_peak": 11.426584675779207,
+    "J_c": 16.211412945676486,
+    "J_p": 23.692173348518473,
+    "N_turns": 20.305833588308317,
+    "I_peak": 1.8799089418646595,
+    "I_cont_rms": 0.909573466106442,
+    "ripple_pp_A": 0.5115066856731336,
+    "ripple_frac": 0.3976477541830603,
+    "J_reflected": 0.12649453458974663,
+    "J_rotor": 1.2599720896448386e-05,
+    "J_gear_motor_side": 4.9732562526277226e-08,
+    "J_reflected_rotor_only": 0.12599720896448385,
+    "eta_gear": 0.9025,
+    "backdrive_Nm": 0.25292389393531156,
+    "backlash_arcmin": 15.0,
+    "stiffness_Nm_arcmin": 3.1615486741913945,
+    "w_motor_peak": 300.0,
+    "eta_actuator": 0.7116404139666272,
+    "board_loss_cont_W": 0.28718667438582085
+   },
+   "source": "coupled.json sets.mass_100_ndfeb.picks.J7"
+  },
+  "Torso": {
+   "motor_name": "PJ_NdFeB_R45.5_48s56p_hm1.5",
+   "magnet": "ndfeb",
+   "R_outer_mm": 45.5,
+   "L_stack_mm": 16.0,
+   "OD_mm": 97.0,
+   "length_mm": 48.673542956772025,
+   "mass_kg": 1.1331313993863465,
+   "mass_breakdown_kg": {
+    "m_active": 0.3306280587332552,
+    "m_magnet": 0.04166709377725513,
+    "m_gear": 0.34960154588139514,
+    "m_struct": 0.38790179477169623,
+    "m_board": 0.065
+   },
+   "gearbox": {
+    "type": "planetary2",
+    "ratio": 64,
+    "eta": 0.9025,
+    "mass_kg": 0.34960154588139514,
+    "mass_note": "m_gear is inside mass_kg (actuator total); the rig mass change uses mass_kg, so the gearbox mass is included",
+    "own_inertia": "NOT MODELLED in the per_joint code (no gearbox inertia in actuator.py); J_reflected = J_rotor * ratio^2 is rotor inertia only, so gearbox inertia is not lumped anywhere",
+    "backlash_arcmin": 15.0,
+    "backlash_rad": 0.004363323129985824,
+    "stiffness_Nm_arcmin": 21.580342338357724,
+    "k_gear_Nm_rad": 74187.75218612277,
+    "backdrive_Nm_output": 1.726427387068618
+   },
+   "N": 64,
+   "eta": 0.9025,
+   "pp": 28,
+   "kt_m": 0.24237875498369524,
+   "kt_m_note": "motor torque at J_p divided by I_peak (Nm per A peak phase, motor side); includes saturation at the peak point",
+   "kt_m_from_lambda": 0.2423795957091195,
+   "lam": 0.005770942754979035,
+   "lam_note": "N_turns * psi_d(J_p), 8 mm FEMM table interpolated and scaled by (L-dL)/8, the code's own flux basis (analysis.py, pf definition)",
+   "R": 0.29145129554453514,
+   "R_note": "Pcu_peak / (1.5 I_peak^2), star phase; same from the continuous point: 0.2915 ohm",
+   "L": 0.00017529909874555044,
+   "L_note": "N^2 * Lq8 * (L-dL)/8, q-axis inductance per phase (actuator.py)",
+   "i_max": 13.574584502749765,
+   "i_cont_rms": 4.356519589231793,
+   "J_rotor": 0.00017554827201857664,
+   "J_rotor_note": "direct value Motor.Jrot(L) = Jrot8*L/8; J_reflected/N^2 = 1.7736e-04 (identical)",
+   "J_reflected": 0.7264867655993754,
+   "tau_coulomb_out": 1.726427387068618,
+   "tau_coulomb_note": "backdrive_Nm (gear start torque, output side) used as the Coulomb term; the rig adds (1-eta)|tau_m| load-dependent friction as for GIM",
+   "b_visc_out": null,
+   "b_visc_note": "ASSUMED: the code has no viscous term; the rig sets it from the GIM-class ratio b/tau_c",
+   "w_motor_peak": 128.0,
+   "w_out_design_peak": 2.0,
+   "T_peak_out_Nm": 190.0414258755648,
+   "T_peak_required_Nm": 190.0414258755648,
+   "T_cont_required_Nm": 86.3213693534309,
+   "design_point_V_over_vmax": 0.9903703987370229,
+   "N_turns": 7.947215100713655,
+   "J_p_Apmm2": 23.89174733316613,
+   "iron_loss_and_cogging": "not in the per_joint model",
+   "cad": {
+    "index_key": "Torso_ndfeb_NdFeB_R45p5_48s56p_hm1p5_planetary264_L16_b66",
+    "index_joint": "Torso",
+    "mass_kg": 1.1331313993863465,
+    "cad_mass_scale": 0.9995331535440936,
+    "com_m": [
+     -5.849682473185621e-16,
+     -5.542066966635471e-18,
+     0.020399618027005538
+    ],
+    "inertia_about_com_kgm2": [
+     [
+      0.0009333173952481999,
+      7.917600746204038e-21,
+      6.521402496386954e-19
+     ],
+     [
+      7.917600746204038e-21,
+      0.0009333173952481939,
+      -1.467566595583275e-20
+     ],
+     [
+      6.521402496386954e-19,
+      -1.467566595583275e-20,
+      0.001443504315869227
+     ]
+    ],
+    "rotor_inertia_cad_kgm2": 0.00019378965865231862,
+    "rotor_inertia_model_kgm2": 0.00017554827201857664,
+    "reflected_inertia_output_cad_kgm2": 0.8012144055216884,
+    "reflected_inertia_output_model_kgm2": 0.7190457221880899,
+    "gearbox": {
+     "mass_kg": 0.3500696608323375,
+     "com_m": [
+      -2.818975807112865e-16,
+      2.1656567309754949e-19,
+      0.008743754032984035
+     ],
+     "inertia_about_com_kgm2": [
+      [
+       0.00017907582952070677,
+       -4.520313446882475e-20,
+       3.9734338975150597e-20
+      ],
+      [
+       -4.520313446882475e-20,
+       0.00017907582952070446,
+       6.26843358702069e-22
+      ],
+      [
+       3.9734338975150597e-20,
+       6.26843358702069e-22,
+       0.0003504835475465082
+      ]
+     ],
+     "inertia_motor_side_kgm2": 1.8191093863804443e-06,
+     "inertia_reflected_output_kgm2": 0.0074510720466143
+    },
+    "note": "CAD index of the Inspiron thread; reflected = CAD rotor + gearbox input, output side; the old per_joint model values are kept in J_rotor / J_reflected"
+   },
+   "source_fields": {
+    "motor": "PJ_NdFeB_R45.5_48s56p_hm1.5",
+    "family": "ndfeb",
+    "R": 45.5,
+    "L": 16.0,
+    "gear": "planetary2",
+    "ratio": 64,
+    "board": "REVA electrical, outline fitted to the housing (simulated, not laid out)",
+    "board_variant": true,
+    "board_D": 66.0,
+    "mass": 1.1331313993863465,
+    "m_active": 0.3306280587332552,
+    "m_magnet": 0.04166709377725513,
+    "m_gear": 0.34960154588139514,
+    "m_struct": 0.38790179477169623,
+    "m_board": 0.065,
+    "OD": 97.0,
+    "length": 48.673542956772025,
+    "volume_l": 0.35968829869757685,
+    "P_allow": 17.6451098223357,
+    "Pcu_cont": 16.594592309476038,
+    "Pcu_peak": 80.55830874152966,
+    "J_c": 10.843663618874366,
+    "J_p": 23.89174733316613,
+    "N_turns": 7.947215100713655,
+    "I_peak": 13.574584502749765,
+    "I_cont_rms": 4.356519589231793,
+    "ripple_pp_A": 1.1409071776820903,
+    "ripple_frac": 0.18518066670409908,
+    "J_reflected": 0.7264867655993754,
+    "J_rotor": 0.00017554827201857664,
+    "J_gear_motor_side": 1.8166609890833795e-06,
+    "J_reflected_rotor_only": 0.7190457221880899,
+    "eta_gear": 0.9025,
+    "backdrive_Nm": 1.726427387068618,
+    "backlash_arcmin": 15.0,
+    "stiffness_Nm_arcmin": 21.580342338357724,
+    "w_motor_peak": 128.0,
+    "eta_actuator": 0.7575843263334714,
+    "board_loss_cont_W": 1.70137980402313
+   },
+   "source": "coupled.json sets.mass_100_ndfeb.torso_resized"
+  }
+ }
+}

@@ -1,0 +1,57 @@
+{
+  "board": "P96",
+  "motors": [
+    "GIM8115-36 48V delta",
+    "GIM8108-36"
+  ],
+  "status": "register contract only; firmware implementation and bench qualification OPEN",
+  "source": "https://www.ti.com/lit/ds/symlink/drv8363.pdf",
+  "source_revision": "SLVSHQ3, December 2025; Tables 6-28 and 6-30, section 6.3.6.9",
+  "phase_shunt_ohm": 0.005,
+  "csa_gain_v_per_v": 10,
+  "vref_nominal_v": 3.3,
+  "current_per_12bit_adc_count_A": 0.016113281249999997,
+  "ideal_adc_half_span_A": 33.0,
+  "csa_linear_half_span_typical_A": 28.0,
+  "shunt_ocp_nominal_A": 26.4,
+  "shunt_ocp_note": "90/10 percent thresholds give 0.4*3.3/(10*0.005)=26.4 A, not 30 A. 80/20 gives 19.8 A and can trip before the 21 A catalog stall current. Threshold/gain/shunt/VREF tolerances and current convention remain unqualified.",
+  "read_modify_write": [
+    {
+      "register": "CSA_CTRL2",
+      "offset_hex": "0x14",
+      "mask_hex": "0x803F",
+      "value_hex": "0x0015",
+      "fields": {
+        "AREF_DIV": 0,
+        "CSA_GAIN_A": 1,
+        "CSA_GAIN_B": 1,
+        "CSA_GAIN_C": 1
+      }
+    },
+    {
+      "register": "MON_CTRL2",
+      "offset_hex": "0x16",
+      "mask_hex": "0x0FBF",
+      "value_hex": "0x0F84",
+      "fields": {
+        "SNS_OCP_STD_SHD": 1,
+        "SNS_OCP_A_EN": 1,
+        "SNS_OCP_B_EN": 1,
+        "SNS_OCP_C_EN": 1,
+        "SNS_OCP_LVL": 1,
+        "SNS_OCP_TRETRY": 0,
+        "SNS_OCP_MODE": 1,
+        "SNS_OCP_DEG": 0
+      }
+    }
+  ],
+  "pre_enable": [
+    "Hold DRVOFF asserted during configuration and offset calibration.",
+    "Read back both masked register fields; reject wrong board/current scale.",
+    "All three shunt OCP enables must be set; reset defaults disable them.",
+    "Retain and verify the existing D07 VDS/VGS/gate-current/fault settings separately.",
+    "Apply motor-specific software current/temperature/speed limits below hardware OCP.",
+    "Do not credit the shared 48 V bus for a GIM4310-40 without vendor approval."
+  ],
+  "encoder_policy": "Rotor MT6835 on motor face; absolute output encoder is external. FAN1/R43/R44 stay DNP because encoder GPIOs are shared."
+}

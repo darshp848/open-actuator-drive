@@ -1,0 +1,16 @@
+(version 1)
+
+# LT8631 switch nodes (datasheet pin 20: "Place the inductor and BST capacitor as close as possible to keep the SW PCB
+# trace short"; Figure 5). Placement (placement.py _fig5_spot, L_SW_MAX) leaves SW pin to inductor pad at 6.0 mm on the
+# 5 V rail (the XT30 J5 pins block the Figure 5 spot) and 3.6 mm on the gate rail. These rules hold the routing to that.
+# Width: 0.4 mm is the TSSOP pin neck; route 1.0 mm or wider away from the pin.
+(rule "LT8631 5V SW short"
+  (condition "A.NetName == '/Power Input/SW_5'")
+  (constraint track_width (min 0.4mm) (opt 1.0mm))
+  (constraint length (max 7.0mm)))
+
+(rule "LT8631 gate SW short"
+  (condition "A.NetName == '/Power Input/SW_G'")
+  (constraint track_width (min 0.4mm) (opt 1.0mm))
+  (constraint length (max 5.0mm)))
+

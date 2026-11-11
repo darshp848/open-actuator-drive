@@ -1,0 +1,4 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"J1","DF40HC(3.0)-80DS-0.4V(51)","Hirose_DF40HC(3.0)-80DS-0.4V_2x40_P0.4mm",150.000000,-108.000000,0.000000,bottom
+"J2","Conn_02x20 2.54mm","PinHeader_2x20_P2.54mm_Vertical",71.800000,-76.540000,90.000000,top
+"J3","Conn_02x20 2.54mm","PinHeader_2x20_P2.54mm_Vertical",118.860000,-121.000000,-90.000000,top

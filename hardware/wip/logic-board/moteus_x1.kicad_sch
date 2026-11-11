@@ -1,0 +1,463 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "9bc804a8-1139-5545-a554-d0480b800fb0")
+	(paper "A3")
+	(title_block
+		(title "Verros logic board - split draft")
+		(date "2026-10-23")
+		(rev "DRAFT 0.2")
+	)
+	(lib_symbols)
+	(text "Custom research firmware is a later work package. This is a PCB design draft."
+		(exclude_from_sim no)
+		(at 190.5 255.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7414b78a-b16c-581b-9833-a14f4cbc9f9a")
+	)
+	(text "80-contact stack: 3 mm nominal gap. No motor current crosses this connector."
+		(exclude_from_sim no)
+		(at 190.5 247.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "98c68cd5-9176-567c-953c-3713d23b60cb")
+	)
+	(sheet
+		(at 149.86 71.12)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "046e635e-099f-5445-a252-c46e4c243517")
+		(property "Sheetname" "Current Sense"
+			(at 149.86 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "current_sense_current_sense.kicad_sch"
+			(at 149.86 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 276.86 71.12)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "0516776a-b14e-5a69-87c2-a51050c351c3")
+		(property "Sheetname" "CAN"
+			(at 276.86 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "can_can.kicad_sch"
+			(at 276.86 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 149.86 106.68)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "62592472-66f6-5184-884d-c91f948262df")
+		(property "Sheetname" "aux1"
+			(at 149.86 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "aux1_aux1.kicad_sch"
+			(at 149.86 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 22.86 71.12)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6f0a19f3-6cb0-5193-8c2e-453b6fc96c71")
+		(property "Sheetname" "aux2"
+			(at 22.86 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "aux2_aux2.kicad_sch"
+			(at 22.86 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 149.86 35.56)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c36405f2-9240-5b70-820c-541a9f992b6a")
+		(property "Sheetname" "stm32g4"
+			(at 149.86 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "stm32g4_stm32g4.kicad_sch"
+			(at 149.86 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 276.86 106.68)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d743d4e0-ebeb-54ee-b251-b41f0e81d509")
+		(property "Sheetname" "Mezzanine interface"
+			(at 276.86 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "mezzanine.kicad_sch"
+			(at 276.86 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 22.86 106.68)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "da917838-d42b-5a90-9ffd-325d35cc1c8e")
+		(property "Sheetname" "Power Input"
+			(at 22.86 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "power_input_power_input.kicad_sch"
+			(at 22.86 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 276.86 35.56)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "dbb74e46-17ce-5dca-ad34-9729181628f2")
+		(property "Sheetname" "rs422"
+			(at 276.86 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "rs422_rs422.kicad_sch"
+			(at 276.86 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 22.86 35.56)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f70bb684-540a-5c97-ae2e-52cbadb7ffb6")
+		(property "Sheetname" "LED Sense"
+			(at 22.86 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "led_sense_led_sense.kicad_sch"
+			(at 22.86 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 22.86 142.24)
+		(size 76.2 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "fedec2f2-133b-525a-b191-58e2134eb969")
+		(property "Sheetname" "Stack mounting"
+			(at 22.86 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sheetfile" "stack_mounting.kicad_sch"
+			(at 22.86 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "moteus_x1"
+				(path "/9bc804a8-1139-5545-a554-d0480b800fb0"
+					(page "15")
+				)
+			)
+		)
+	)
+)

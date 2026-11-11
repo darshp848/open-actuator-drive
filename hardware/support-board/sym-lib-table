@@ -1,0 +1,10 @@
+(sym_lib_table
+	(version 7)
+	(lib
+		(name "Support")
+		(type "KiCad")
+		(uri "${KIPRJMOD}/Support.kicad_sym")
+		(options "")
+		(descr "Support-board symbols")
+	)
+)

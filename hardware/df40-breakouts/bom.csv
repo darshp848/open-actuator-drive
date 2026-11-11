@@ -1,0 +1,4 @@
+Board,Ref,Qty per board,Manufacturer,MPN,DigiKey PN,DigiKey stock 2026-11-02,Unit price (qty 1)
+DF40_Header_Breakout,J1,1,Hirose,DF40C-80DP-0.4V(51),cut tape (search MPN),25224,$1.93
+DF40_Receptacle_Breakout,J1,1,Hirose,DF40HC(3.0)-80DS-0.4V(51),26-DF40HC(3.0)-80DS-0.4V(51)CT-ND,4743,$3.13
+Both,J2 J3,2,Sullins,PRPC020DAAN-RC,35-PRPC020DAAN-RC-ND,5823,$0.95

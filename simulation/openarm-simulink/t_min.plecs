@@ -1,0 +1,300 @@
+Plecs {
+  Name          "t_min"
+  Version       "5.0"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "0.03"
+  Timeout       ""
+  Solver        "dopri"
+  MaxStep       "1e-6"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "1e-3"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "2"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "2"
+  AssertionAction "1"
+  InitializationCommands "pp = 21;\nRs = 0.49;\nLs = 0.000275;\nlam = 0.01083;\nJm = 1e-06;\nwm0"
+" = 0;\nkp_i = 1.728;\nki_i = 3079;\nv_frac = 0.5485;\nron = 0.009;\nfs"
+"w = 100000.0;\ntd = 1e-07;\nr_hop = 0.01;\nl_hop = 2e-07;\nc_local = 7"
+".6e-05;\nesr_local = 0.005;\nv0 = 48;\nref_t = [0 1];\nref_wm = [0 0];"
+"\nref_iq = [0 0];\nref_vb = [48 48];"
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [0, 53; 1300, 700]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          VoltageSource
+      Name          "Vbank"
+      Show          on
+      Position      [5500, 3000]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Gnd"
+      Show          on
+      Position      [5485, 3260]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am_board"
+      Show          on
+      Position      [5445, 3515]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Resistor
+      Name          "R_hop"
+      Show          on
+      Position      [5375, 3770]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "r_hop"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "L_hop"
+      Show          on
+      Position      [5280, 4015]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "L"
+        Value         "l_hop"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Voltmeter
+      Name          "Vm_board"
+      Show          on
+      Position      [5165, 4250]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Capacitor
+      Name          "C_local"
+      Show          on
+      Position      [5020, 4465]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "C"
+        Value         "c_local"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "v0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R_esr"
+      Show          on
+      Position      [4855, 4670]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "esr_local"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am_cap"
+      Show          on
+      Position      [4670, 4855]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Constant
+      Name          "vb_const"
+      Show          on
+      Position      [4465, 5020]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Value"
+        Value         "48"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Output
+      Name          "vout"
+      Show          on
+      Position      [4250, 5165]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Index"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Width"
+        Value         "-1"
+        Show          off
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Vbank"
+      SrcTerminal   1
+      DstComponent  "Am_board"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am_board"
+      SrcTerminal   2
+      DstComponent  "R_hop"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R_hop"
+      SrcTerminal   2
+      DstComponent  "L_hop"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L_hop"
+      SrcTerminal   2
+      Points        [5325, 4060]
+      Branch {
+        DstComponent  "Vm_board"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "C_local"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "C_local"
+      SrcTerminal   2
+      DstComponent  "R_esr"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R_esr"
+      SrcTerminal   2
+      DstComponent  "Am_cap"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Gnd"
+      SrcTerminal   1
+      Points        [5530, 3305]
+      Branch {
+        DstComponent  "Vbank"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "Vm_board"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "Am_cap"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "vb_const"
+      SrcTerminal   1
+      DstComponent  "Vbank"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Vm_board"
+      SrcTerminal   3
+      DstComponent  "vout"
+      DstTerminal   1
+    }
+  }
+}

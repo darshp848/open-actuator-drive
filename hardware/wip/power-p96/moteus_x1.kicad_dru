@@ -1,0 +1,8 @@
+(version 1)
+
+# Both P96 supplies have validated SW pin to inductor distances below 3 mm.
+# Keep the routed node short and widen after the TSSOP escape.
+(rule "P96 LT8631 switch nodes"
+  (condition "A.NetName == '/Power Input/SW_5' || A.NetName == '/Power Input/SW_G'")
+  (constraint track_width (min 0.4mm) (opt 1.0mm))
+  (constraint length (max 5.5mm)))

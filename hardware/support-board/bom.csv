@@ -1,0 +1,134 @@
+ref,value,mpn,footprint,block,note
+J1,XT90PW-M battery,XT90PW-M,AMASS_XT90PW-M_1x02_P10.90mm_Horizontal,Input / hot-swap,"Battery input, male PCB XT90 (battery lead carries the female)"
+D1,SMCJ58A,SMCJ58A-M3/57T,D_SMC,Input / hot-swap,"Input TVS, VBR 64.4-71.2 V, VC 93.6 V at 16 A (Vishay 88394); C59/C60 take the lead energy first"
+C1,1uF 100V,GRM32ER72A105KA01L,C_1210_3225Metric,Input / hot-swap,VIN bypass at U1
+C59,33uF 100V,875575961005,CP_Elec_10x12.6,Input / hot-swap,"Input energy absorber, Wurth hybrid polymer, 40 mOhm"
+C60,47uF 100V,EEE-FN2A470UP,CP_Elec_10x10.5,Input / hot-swap,"Input damping, 0.7 ohm ESR damps the lead / ceramic LC ring"
+RS1,1.8m 1% 3W,CSS2H-2512K-1L80FE,R_2512_6332Metric,Input / hot-swap,"Sense, 2 x 1.8 mOhm = 0.9 mOhm: I_LIM 53.4-69.0 A"
+RS2,1.8m 1% 3W,CSS2H-2512K-1L80FE,R_2512_6332Metric,Input / hot-swap,
+U1,LM5069MM-2/NOPB,LM5069MM-2/NOPB,VSSOP-10_3x3mm_P0.5mm,Input / hot-swap,
+Q1,CSD19536KTT,CSD19536KTTT,TO-263-2,Input / hot-swap,
+R3,10R,RC0603FR-0710RL,R_0603_1608Metric,Input / hot-swap,Per-FET gate resistor (parallel FETs)
+Q2,CSD19536KTT,CSD19536KTTT,TO-263-2,Input / hot-swap,
+R4,10R,RC0603FR-0710RL,R_0603_1608Metric,Input / hot-swap,Per-FET gate resistor (parallel FETs)
+R5,71.5k 1%,RC0603FR-0771K5L,R_0603_1608Metric,Input / hot-swap,"UVLO: on 19.2 V, off 17.7 V (21 uA hysteresis)"
+R6,10.7k 1%,RC0603FR-0710K7L,R_0603_1608Metric,Input / hot-swap,
+R7,71.5k 1%,RC0603FR-0771K5L,R_0603_1608Metric,Input / hot-swap,"OVLO: off 59.1 V, on 57.6 V (above the 57.1 V chopper)"
+R8,3.16k 1%,RC0603FR-073K16L,R_0603_1608Metric,Input / hot-swap,
+R9,27.4k 1%,RC0603FR-0727K4L,R_0603_1608Metric,Input / hot-swap,Power limit 305 W at 54 V with 0.9 mOhm (VSNS 5.1 mV >= 5 mV floor)
+C2,15nF,C0603C153K5RACTU,C_0603_1608Metric,Input / hot-swap,Fault timer 0.71 ms (0.42-1.35 ms); insertion delay 11 ms
+R10,1k,RC0603FR-071KL,R_0603_1608Metric,Input / hot-swap,"dv/dt start: 16 uA / 47 nF = 340 V/s, ~1 A into 3 mF"
+C3,47nF 100V,C0603C473K1RACTU,C_0603_1608Metric,Input / hot-swap,Gate-to-ground dv/dt capacitor sees about BUS + 12 V; DC-bias startup qualification remains open
+Q4,BSS138,BSS138,SOT-23,Input / hot-swap,RUN_INH high (default) -> UVLO held low -> hot-swap off
+R11,100k,RC0402FR-07100KL,R_0402_1005Metric,Input / hot-swap,
+Q5,BSS138,BSS138,SOT-23,Input / hot-swap,
+D5,green PGD,150060GS75000,LED_0603_1608Metric,Input / hot-swap,PGD released indication only; does not prove bus voltage or input validity
+R12,1k,RC0402FR-071KL,R_0402_1005Metric,Input / hot-swap,
+Q7,BSC040N10NS5ATMA1,BSC040N10NS5ATMA1,TDSON-8-1,Input / hot-swap,"Ideal-diode FET: source HS_S, drain BUS+ (2 x 4 mOhm in parallel)"
+R33,10R,RC0603FR-0710RL,R_0603_1608Metric,Input / hot-swap,Per-FET gate resistor (parallel FETs)
+Q8,BSC040N10NS5ATMA1,BSC040N10NS5ATMA1,TDSON-8-1,Input / hot-swap,"Ideal-diode FET: source HS_S, drain BUS+ (2 x 4 mOhm in parallel)"
+R34,10R,RC0603FR-0710RL,R_0603_1608Metric,Input / hot-swap,Per-FET gate resistor (parallel FETs)
+U9,LTC4359IMS8#PBF,LTC4359IMS8#PBF,MSOP-8_3x3mm_P0.65mm,Input / hot-swap,Ideal diode controller: blocks regeneration into the source
+D7,BZT52C12,BZT52C12-7-F,D_SOD-123,Input / hot-swap,"12 V gate-source clamp (LTC4359 D4, required at 24 V and above)"
+D8,SMAT70A,SMAT70A,D_SMA,Input / hot-swap,IN/SOURCE positive clamp to VSS (LTC4359 D1)
+R35,1k,RC0603FR-071KL,R_0603_1608Metric,Input / hot-swap,VSS resistor (LTC4359 R1): keeps fast turn-off with the TVS
+C20,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C21,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C22,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C23,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C24,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C25,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C26,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C27,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C28,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C29,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C30,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C31,130uF 80V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,Bank / chain outputs,
+C32,1uF 100V,GRM32ER72A105KA01L,C_1210_3225Metric,Bank / chain outputs,HF bypass at the chain outputs
+C33,1uF 100V,GRM32ER72A105KA01L,C_1210_3225Metric,Bank / chain outputs,HF bypass at the chain outputs
+C34,1uF 100V,GRM32ER72A105KA01L,C_1210_3225Metric,Bank / chain outputs,HF bypass at the chain outputs
+C35,1uF 100V,GRM32ER72A105KA01L,C_1210_3225Metric,Bank / chain outputs,HF bypass at the chain outputs
+R13,10k 0.5W,RC2512FK-0710KL,R_2512_6332Metric,Bank / chain outputs,Bleeder: 3 mF from 54 V to 5 V in ~150 s
+R14,10k 0.5W,RC2512FK-0710KL,R_2512_6332Metric,Bank / chain outputs,
+J2,XT30PW(2+2)-M chain,XT30PW(2+2)-M.G.B,XT30PW22M,Bank / chain outputs,Same pinout as the actuator J1/J5
+J3,XT30PW(2+2)-M chain,XT30PW(2+2)-M.G.B,XT30PW22M,Bank / chain outputs,Same pinout as the actuator J1/J5
+JP1,CAN TERM,,SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,Bank / chain outputs,Close to terminate the chain at the support board
+R15,60.4R,RC0603FR-0760R4L,R_0603_1608Metric,Bank / chain outputs,
+R16,60.4R,RC0603FR-0760R4L,R_0603_1608Metric,Bank / chain outputs,
+C36,4.7nF,GRM188R71H472KA01D,C_0603_1608Metric,Bank / chain outputs,
+R20,150k 0.1%,TNPW0603150KBETA,R_0603_1608Metric,Brake chopper,Threshold 57.1 V on / 55.0 V off
+R21,150k 0.1%,TNPW0603150KBETA,R_0603_1608Metric,Brake chopper,
+R22,6.81k 0.1%,TNPW06036K81BETA,R_0603_1608Metric,Brake chopper,
+R23,237k 0.1%,TNPW0603237KBETA,R_0603_1608Metric,Brake chopper,
+R24,237k 0.1%,TNPW0603237KBETA,R_0603_1608Metric,Brake chopper,
+U3,TLV3201AIDBVR,TLV3201AIDBVR,SOT-23-5,Brake chopper,
+U4,REF3312AIDBZR,REF3312AIDBZR,SOT-23,Brake chopper,
+C40,0.1uF,GCM155R71E104KE02D,C_0402_1005Metric,Brake chopper,
+C41,1uF,C1608X7R1E105K080AE,C_0603_1608Metric,Brake chopper,
+C42,1uF,C1608X7R1E105K080AE,C_0603_1608Metric,Brake chopper,
+U5,SN74LVC1G32DBVR,SN74LVC1G32DBVR,SOT-23-5,Brake chopper,Chopper on = overvoltage OR discharge request
+C43,0.1uF,GCM155R71E104KE02D,C_0402_1005Metric,Brake chopper,
+U6,UCC27517DBVR,UCC27517DBVT,SOT-23-5,Brake chopper,IN+ = primary CH_CMD OR backup CHB_OV; VDD = +12V OR V_CHB (aux-loss fix 2026-10-25)
+C44,0.1uF 25V,GCM155R71E104KE02D,C_0402_1005Metric,Brake chopper,
+C45,1uF 25V,C1608X7R1E105K080AE,C_0603_1608Metric,Brake chopper,
+D13,1N5819HW,1N5819HW-7-F,D_SOD-123,Brake chopper,Primary command into the driver OR (3.2 V - 0.3 V > VIN_H 2.4 V)
+R49,100k,RC0402FR-07100KL,R_0402_1005Metric,Brake chopper,Driver input pull-down
+D14,1N5819HW,1N5819HW-7-F,D_SOD-123,Brake chopper,Driver supply from the aux 12 V
+R25,4.7R,RC0603FR-074R7L,R_0603_1608Metric,Brake chopper,
+R26,10k,RC0402FR-0710KL,R_0402_1005Metric,Brake chopper,
+Q3,BSC040N10NS5ATMA1,BSC040N10NS5ATMA1,TDSON-8-1,Brake chopper,Chopper switch: 21.6 A into 2.5 ohm at 54 V
+D2,V10P10-M3/86A,V10P10-M3/86A,TO-277A,Brake chopper,Freewheel across the resistor harness
+J4,BRAKE RESISTOR,,PowerWire_P8,Brake chopper,"Wire pads to BrakeResistor J1 (1 = BRK+, 2 = switched end)"
+D6,red BRAKE,150060RS75000,LED_0603_1608Metric,Brake chopper,
+R27,1k,RC0402FR-071KL,R_0402_1005Metric,Brake chopper,
+U10,LR8N8-G,LR8N8-G,SOT-89-3,Backup OV brake,Bus-powered 10 V for the backup channel (9.5-10.7 V); needs BUS+ >= 22.7 V
+C61,0.1uF 100V,GCJ188R72A104KA01D,C_0603_1608Metric,Backup OV brake,
+R43,2.4k 1%,RC0603FR-072K4L,R_0603_1608Metric,Backup OV brake,LR8 R1: also its 0.5 mA minimum load
+R44,17.4k 1%,RC0603FR-0717K4L,R_0603_1608Metric,Backup OV brake,LR8 R2: 1.20 V x 8.25 + 10 uA x 17.4k = 10.07 V
+C62,1uF 25V,C1608X7R1E105K080AE,C_0603_1608Metric,Backup OV brake,LR8 output (>= 1 uF)
+D15,1N5819HW,1N5819HW-7-F,D_SOD-123,Backup OV brake,Driver supply from the bus when the aux is gone
+R45,750k 0.1%,TNPW0805750KBEEA,R_0805_2012Metric,Backup OV brake,Backup trip 61.1 V on / 60.3 V off (VIT+ 400 mV)
+R46,750k 0.1%,TNPW0805750KBEEA,R_0805_2012Metric,Backup OV brake,
+R47,9.88k 0.1%,TNPW06039K88BEEA,R_0603_1608Metric,Backup OV brake,
+C64,1nF,GRM155R71H102KA01D,C_0402_1005Metric,Backup OV brake,"Sense filter, 10 us"
+U11,TPS3700DDCR,TPS3700DDCR,TSOT-23-6,Backup OV brake,Backup OV detector: OUTA released above VIT+
+C63,0.1uF,GCM155R71E104KE02D,C_0402_1005Metric,Backup OV brake,
+R48,10k,RC0402FR-0710KL,R_0402_1005Metric,Backup OV brake,OUTA pull-up
+D12,1N5819HW,1N5819HW-7-F,D_SOD-123,Backup OV brake,"Backup command into the driver OR (about 8.8 V, < 18 V IN limit)"
+J5,RUN (close to run),B2B-PH-K-S,JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,"RUN, discharge, thermostat",Open = hot-swap off and bus actively discharged; broken wire = off
+R30,10k,RC0402FR-0710KL,R_0402_1005Metric,"RUN, discharge, thermostat",
+C46,0.1uF,GCM155R71E104KE02D,C_0402_1005Metric,"RUN, discharge, thermostat",
+R31,10k,RC0402FR-0710KL,R_0402_1005Metric,"RUN, discharge, thermostat","Q4 no longer hangs off RUN_OFF, so 10 k keeps DISCH low at 0.37 V worst case (inhibit_audit)"
+R36,1M 1%,RC0805FR-071ML,R_0805_2012Metric,"RUN, discharge, thermostat",Default-off pull-up from the battery (150 V 0805)
+D9,BZT52C10,BZT52C10-7-F,D_SOD-123,"RUN, discharge, thermostat",Clamps RUN_INH (Q4/Q9 gate-drain) to 9.4-10.6 V
+C38,1nF,GRM155R71H102KA01D,C_0402_1005Metric,"RUN, discharge, thermostat","RUN_INH filter, 1 ms with R36"
+Q9,BSS138,BSS138,SOT-23,"RUN, discharge, thermostat",Releases the hot-swap only when RUN is closed AND +12V is up
+U12,TPS3700DDCR,TPS3700DDCR,TSOT-23-6,"RUN, discharge, thermostat",Aux-good: Q9 may release the hot-swap only with +12V above 10.6 V
+R50,255k 0.1%,TNPW0603255KBEEA,R_0603_1608Metric,"RUN, discharge, thermostat",
+R51,10k 0.1%,TNPW060310K0BEEA,R_0603_1608Metric,"RUN, discharge, thermostat",
+C66,0.1uF,GCM155R71E104KE02D,C_0402_1005Metric,"RUN, discharge, thermostat",
+R52,150k,RC0402FR-07150KL,R_0402_1005Metric,"RUN, discharge, thermostat",AUX_OK pull-up (0.4 x +12V with R37)
+R37,100k,RC0402FR-07100KL,R_0402_1005Metric,"RUN, discharge, thermostat",
+C65,0.1uF,GCM155R71E104KE02D,C_0402_1005Metric,"RUN, discharge, thermostat","Start-up hold-off, 6 ms with R52 || R37"
+D11,BAT54WS,BAT54WS-7-F,D_SOD-323,"RUN, discharge, thermostat",RUN contact pulls the RUN_OFF dump logic low; blocks Q9 current into +3V3
+Q6,BSS138,BSS138,SOT-23,"RUN, discharge, thermostat",Thermostat open -> no forced discharge (overvoltage clamp still works)
+J6,THERMOSTAT (NC),B2B-PH-K-S,JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,"RUN, discharge, thermostat",BrakeResistor NC thermostat loop
+R32,10k,RC0402FR-0710KL,R_0402_1005Metric,"RUN, discharge, thermostat",
+C47,0.1uF,GCM155R71E104KE02D,C_0402_1005Metric,"RUN, discharge, thermostat",
+D3,SS1H10,SS1H10-E3/61T,D_SMA,Housekeeping 12 V / 3.3 V,
+D4,SS1H10,SS1H10-E3/61T,D_SMA,Housekeeping 12 V / 3.3 V,"Bus feeds the aux too, so the chopper keeps working with the battery gone"
+U7,LT8631EFE#PBF,LT8631EFE#PBF,Analog_FE20-16_TSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP2.74x3.86mm,Housekeeping 12 V / 3.3 V,
+C50,2.2uF 100V,GRM32ER72A225KA35L,C_1210_3225Metric,Housekeeping 12 V / 3.3 V,
+C51,0.1uF 100V,GCJ188R72A104KA01D,C_0603_1608Metric,Housekeeping 12 V / 3.3 V,
+C52,2.2uF 16V,C1608X7R1C225K080AC,C_0603_1608Metric,Housekeeping 12 V / 3.3 V,
+R40,25.5k 1%,RC0402FR-0725K5L,R_0402_1005Metric,Housekeeping 12 V / 3.3 V,
+C53,10nF,GRM155R71H103KA88D,C_0402_1005Metric,Housekeeping 12 V / 3.3 V,
+C54,0.1uF 25V,GCM155R71E104KE02D,C_0402_1005Metric,Housekeeping 12 V / 3.3 V,
+L1,22uH,IHLP2525CZER220M8A,L_Vishay_IHLP-2525,Housekeeping 12 V / 3.3 V,
+R41,1M 1%,RC0402FR-071ML,R_0402_1005Metric,Housekeeping 12 V / 3.3 V,
+C55,4.7pF,GRM1555C1H4R7CA01D,C_0402_1005Metric,Housekeeping 12 V / 3.3 V,
+R42,71.5k 1%,RC0402FR-0771K5L,R_0402_1005Metric,Housekeeping 12 V / 3.3 V,
+C56,22uF 25V,C3225X7R1E226M250AB,C_1210_3225Metric,Housekeeping 12 V / 3.3 V,
+U8,MCP1703AT-3302E/TT,MCP1703AT-3302E/TT,SOT-23,Housekeeping 12 V / 3.3 V,"3.3 V for comparator, reference, logic (16 V max in)"
+C57,1uF 25V,C1608X7R1E105K080AE,C_0603_1608Metric,Housekeeping 12 V / 3.3 V,
+C58,1uF,C1608X7R1E105K080AE,C_0603_1608Metric,Housekeeping 12 V / 3.3 V,

@@ -1,0 +1,16 @@
+ref,value,mpn,footprint,datasheet,offboard
+C1,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C2,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C3,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C4,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C5,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C6,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C7,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C8,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C9,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C10,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C11,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+C12,130 uF / 80 V,B40910A0137M000,TDK_B40910_10x16p5_DRAFT,https://www.tdk-electronics.tdk.com/inf/20/30/db/aec/b40910.pdf,False
+J1,Paired inverter supply leads,,PowerWire_P8,,False
+R1,10 kR / 0.5 W,,Bleeder_2512,,False
+R2,10 kR / 0.5 W,,Bleeder_2512,,False

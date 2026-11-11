@@ -1,0 +1,4 @@
+"Reference","Value","Footprint","QUANTITY","Manufacturer","MPN","DNP"
+"C1-C12","130 uF / 80 V","External:TDK_B40910_10x16p5_DRAFT","12","","B40910A0137M000",""
+"J1","Paired inverter supply leads","External:PowerWire_P8","1","","",""
+"R1,R2","10 kR / 0.5 W","External:Bleeder_2512","2","","",""
