@@ -3,7 +3,7 @@
  "magnet": "ferrite",
  "case": "size",
  "provenance": {
-  "repo": "/home/inspiron/projects/motor_control_research/Motor_Control_NN_Pipeline",
+  "repo": "Motor_Control_NN_Pipeline",
   "branch": "robot-joint-rotor-study",
   "commit": "db5e76c",
   "files": [

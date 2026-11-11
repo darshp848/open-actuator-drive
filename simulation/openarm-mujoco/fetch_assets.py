@@ -1,4 +1,5 @@
 """Acquire pinned official data assets; verify Git blobs and record provenance."""
+import os
 import concurrent.futures
 import hashlib
 import json
@@ -10,7 +11,7 @@ ROOT = Path(__file__).resolve().parent
 COMMIT = '06b4c8ad6d547c3faaa3bf780629ee3e1ac2b0d0'
 REPO = 'https://github.com/enactic/openarm_mujoco'
 TARGET = ROOT / 'vendor' / 'openarm_mujoco'
-URDF = Path(r'C:\Users\darsh\TAMU\Projects\Codex_June26\48V_inverter_project\hardware\kicad\x1_redesign\build\openarm-v2-load\v2.urdf')
+URDF = Path(os.environ.get('OPENARM_V2_URDF', ROOT / 'reference' / 'v2.urdf'))
 
 
 def get(url):

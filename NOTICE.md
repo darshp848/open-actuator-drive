@@ -1,6 +1,6 @@
 # Notices
 
-Copyright (c) 2026 COPYRIGHT HOLDER TO BE CONFIRMED
+Copyright (c) 2026 Darsh Patel
 
 ## mjbots moteus X1
 
@@ -17,8 +17,9 @@ This project is not an mjbots product and is not endorsed by mjbots.
 ## OpenArm (Enactic, Inc.)
 
 `simulation/openarm-mujoco/fetch_assets.py` downloads the OpenArm v2 MuJoCo
-model from <https://github.com/enactic/openarm_mujoco> at a pinned commit. It is not
-redistributed here. Check the upstream licence before redistributing it.
+model from <https://github.com/enactic/openarm_mujoco> at a pinned commit
+(Apache-2.0). Only the OpenArm v2 URDF is redistributed, in
+`simulation/openarm-mujoco/reference/`.
 
 ## MABEL
 

@@ -4,7 +4,7 @@
  "case": "mass_100",
  "provenance": {
   "cad_index": "robot_rotor/cad/per_joint/index.json",
-  "repo": "/home/inspiron/projects/motor_control_research/Motor_Control_NN_Pipeline",
+  "repo": "Motor_Control_NN_Pipeline",
   "branch": "robot-joint-rotor-study",
   "commit": "db5e76c",
   "files": [

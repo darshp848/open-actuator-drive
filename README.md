@@ -1,7 +1,5 @@
 # Open actuator drive
 
-> Working name. Pick the final name before the first push, and keep "moteus" and
-> "mjbots" out of it (see [NOTICE](NOTICE.md)).
 
 KiCad hardware and simulation models for a 12S (10 to 54 V) brushless actuator
 drive and the support electronics around it, built for a humanoid upper body

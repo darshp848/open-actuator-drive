@@ -21,7 +21,7 @@ the MABEL repo was run: only `mabel_full.xml` is loaded, by absolute path.
 | `dev/` | two small probe scripts used while building (static hold, payload lever arm) |
 
 Run from anywhere with the venv python, always isolated:
-`C:/Users/darsh/TAMU/EMPE_Lab/Actuator-controls/simulation/.venv-openarm/Scripts/python.exe -I -B mabel_gim/run_all.py [A] [B] [C]`
+`python -I -B mabel_gim/run_all.py [A] [B] [C]`
 (`-B` stops bytecode being written). Results of the runs quoted here:
 
 - `results/20261105_072645_scenarios/` : `metrics.json`, `summary.md` (all tables), PNGs (`B_*`, `C_*`: torso q vs ref, tracking error, iq vs limits, DC bus power, torque-speed with the envelope, arm J1/J2 iq/i_max; `A_*`: hold error and iq), `.npz` time series

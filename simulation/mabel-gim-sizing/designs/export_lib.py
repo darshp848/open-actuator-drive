@@ -2,7 +2,7 @@
 Run: python3 -B export_params.py   (writes only into this folder)"""
 import sys, json, math, subprocess
 sys.dont_write_bytecode = True
-REPO = "/home/inspiron/projects/motor_control_research/Motor_Control_NN_Pipeline"
+REPO = "Motor_Control_NN_Pipeline"
 sys.path.insert(0, REPO + "/robot_rotor/per_joint")
 import numpy as np
 import actuator as A

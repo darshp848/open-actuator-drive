@@ -5,10 +5,10 @@
 	(uuid "0594956d-12fc-5ee5-a865-6893670b6f33")
 	(paper "A4")
 	(title_block
-		(title "Verros X1 - Power + CAN chain")
+		(title "X1-derived drive - Power + CAN chain")
 		(date "2026-10-12")
 		(rev "DRAFT 0.2")
-		(company "Verros Robotics; X1-derived draft")
+		(company "X1-derived draft")
 	)
 	(lib_symbols
 		(symbol "X1_Draft:XT30PW_2plus2_M"

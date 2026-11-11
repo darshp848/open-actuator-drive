@@ -8,7 +8,7 @@
 	)
 	(paper "A4")
 	(title_block
-		(title "Verros power split placement draft")
+		(title "Power split placement draft")
 		(date "2026-10-23")
 		(rev "DRAFT 0.2")
 	)

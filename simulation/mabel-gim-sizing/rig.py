@@ -16,8 +16,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import gim_params as G  # noqa: E402
 
-XML = ('C:/Users/darsh/TAMU/EMPE_Lab/Actuator-controls/simulation/mabel/open_mabel/simulation/mabel_mujoco/'
-       'models/mabel_full.xml')
+import os  # noqa: E402
+# Set OPEN_MABEL to a clone of https://github.com/robotmabel/open_mabel
+XML = str(Path(os.environ.get('OPEN_MABEL', HERE.parent / 'open_mabel')) / 'simulation' / 'mabel_mujoco' / 'models' / 'mabel_full.xml')
 ARM_J = [f'{s} Arm {i}' for s in ('Left', 'Right') for i in range(1, 8)]
 JN = ['Torso'] + ARM_J                      # the 15 joints that get a GIM actuator (index 0 = torso)
 IDX = [0] + list(range(14))                 # torso uses the GIM8115-36 (arm J1 row); arms map by joint index 1..7
