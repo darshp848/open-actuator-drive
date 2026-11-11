@@ -1,13 +1,9 @@
 # X1 brake resistor board (rev B)
 
-The 2.5 ohm load for the support board's brake chopper (Q3, on at 57.1 V,
-off at 55.0 V). It replaces the 2026-10 BrakeResistor draft in
-`source/external_boards/BrakeResistor` on the X1 working branch. That draft
-had four bare LTO100s along one edge, waiting for an unspecified "common
-vertical heatsink". This revision adds a heatsink per resistor, a thermostat,
-and a modeled thermal envelope.
+The 2.5 ohm load for the [support board](../support-board/)'s brake chopper.
+The current Rev B layout is a 190 × 38 mm strip with four heatsinks in one row.
 
-![top](renders/BrakeResistor-top.png)
+![KiCad render of the brake resistor strip](renders/BrakeResistor-strip.png)
 
 ## What it is
 
@@ -18,25 +14,27 @@ and a modeled thermal envelope.
 | Thermostat | Sensata Airpax 67L085P, normally closed, opens at 85 +/- 5 C. Its bracket is plastic, so it is isolated. It shares R4's M3 screw on the far face of HS4's web. |
 | J1 | Two 2.0 mm wire pads, 8 mm pitch, the same land as support J4. 1 = BUS+, 2 = BRK_SW. Use a 16 AWG pair. |
 | J2 | JST PH 2-pin to support J6 (PH to PH lead). 1 = TH_OPEN, 2 = support GND. |
-| PCB | 120 x 86 mm, 2 layers, 1.6 mm, 1 oz nominal. BUS+ is a plane on top and BRK_SW a plane on the bottom, so the chopper loop is two parallel plates. |
+| PCB | 190 × 38 mm, 2 layers, 1.6 mm, 1 oz nominal. BUS+ is a plane on top and BRK_SW a plane on the bottom, so the chopper loop is two parallel plates. |
 | Cost | About $62 in parts for one board at qty 1 (see [bom.csv](bom.csv); all in stock at DigiKey on 2026-11-02) plus the PCB |
 
-Mount the board flat with the heatsink fins vertical. The heatsink columns
-are 64 mm apart, leaving a nominal 22 mm gap. The power-wire pads are
-centered on the long axis. The five M3 holes support the board at the corners
-and between the sinks, which weigh about 250 g together.
+Mount the board flat with the heatsink fins vertical. The heatsinks have a nominal
+4 mm gap between adjacent end fins. The five M3 holes and both connectors sit
+along the long edge.
 
-## Rating and how it was sized
+## Thermal sizing for the earlier layout
 
-[brake_sizing.py](brake_sizing.py) computes everything below. Its output is in
+[brake_sizing.py](brake_sizing.py) models the earlier two-by-two heatsink layout. Its output is in
 [checks/brake_sizing-output.txt](checks/brake_sizing-output.txt).
 
-The chopper puts 1.3 kW across the bank while it conducts. Each burst lasts
+The strip's smaller gaps change airflow. The estimates below have no hardware
+validation and do not establish ratings for the strip.
+
+The model puts 1.3 kW across the bank while the chopper conducts. Each burst lasts
 only about 0.17 ms (52 mJ per resistor, 5 % of the LTO100 cold single-pulse
 limit). Averaged over time, the bank dissipates the regenerated power and no
 more. So the 1.3 kW figure does not size anything. What sizes the bank is:
 
-- **Continuous: 41 W average at 40 C ambient** (61 W at 25 C). That is the
+- **Earlier layout estimate: 41 W average at 40 C ambient** (61 W at 25 C). That is the
   power at which the heatsinks reach 80 C, the lowest point at which the
   thermostat may open. The resistors are well inside their rating there:
   case 90 C, element 106 C. The LTO100 would allow 56 W each at that case
@@ -85,8 +83,8 @@ Assumptions:
    event takes the bus past the 80 V parts.
 2. **The thermostat does not stop regen** (pushing back on the support-board
    design here). On the support board an open J6 only blocks the forced
-   discharge (Q6). If the average regen stays above 41 W, the heatsinks keep
-   heating with the thermostat open. TH_OPEN should also reach the
+   discharge (Q6). The heatsinks can keep heating
+   with the thermostat open. TH_OPEN should also reach the
    controllers so they stop regenerating, or drop RUN.
 3. **A source above 57.1 V would burn the bank.** The LM5069 overvoltage
    lockout lets the source back on below 57.6 V. That is above the 57.1 V
@@ -114,13 +112,11 @@ Assumptions:
 
 ## Files
 
-- `generate.py`: writes the footprints, schematic and routed board. Run it with KiCad's Python:
-  `"%LOCALAPPDATA%/Programs/KiCad/10.0/bin/python.exe" generate.py --layout-only`
-  rebuilds the layout while preserving the existing schematic and project
-  settings.
-- `BrakeResistor/`: KiCad 10 project.
-- `BrakeResistor.pretty/`: land patterns for LTO100 on the sink, 67L on the sink web, and the wire pads.
-- `fab/` contains the superseded **98 x 86 mm** exports. For the current
-  outline and round drills, see the [120 x 86 mm review exports](../../build/brake-resistor/length-20261104/notes.md).
-- `checks/` contains the current KiCad 10.0.7 ERC and DRC reports. ERC, DRC,
-  unrouted connections and schematic parity issues are all zero.
+- [KiCad project](BrakeResistor/BrakeResistor.kicad_pro) and [parts list](bom.csv).
+- [Gerber and drill ZIP](../../fab/brake-resistor/BrakeResistor/BrakeResistor-gerbers.zip)
+  and [schematic PDF](../../fab/brake-resistor/BrakeResistor/BrakeResistor-schematic.pdf).
+- [ERC report](checks/BrakeResistor-erc.json) and
+  [DRC and parity report](checks/BrakeResistor-drc.json) for the strip.
+- [Generator for the earlier 120 × 86 mm layout](generate.py). Running it
+  in this folder overwrites the strip layout. Use the KiCad project as the
+  editable source for the strip.

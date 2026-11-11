@@ -33,7 +33,7 @@ import uuid
 import pcbnew
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TWO_STORY = os.path.normpath(os.path.join(HERE, "..", "two_story"))
+STACK = os.path.normpath(os.path.join(HERE, "..", "wip"))
 KICAD_SHARE = os.path.normpath(
     os.path.join(os.path.dirname(sys.executable), "..", "share", "kicad"))
 STOCK_FP = os.path.join(KICAD_SHARE, "footprints")
@@ -47,9 +47,9 @@ DF40_FOOTPRINTS = {
     "Hirose_DF40HC(3.0)-80DS-0.4V_2x40_P0.4mm": "Common_Logic",
 }
 SOURCES = {
-    "Common_Logic": "Common_Logic/moteus_x1.kicad_pcb",
-    "Power_Reference": "Power_Reference/moteus_x1.kicad_pcb",
-    "Power_P96": "Power_P96/moteus_x1.kicad_pcb",
+    "Common_Logic": "logic-board/moteus_x1.kicad_pcb",
+    "Power_Reference": "power-wgg/moteus_x1.kicad_pcb",
+    "Power_P96": "power-p96/moteus_x1.kicad_pcb",
 }
 
 # J_STACK1 sits at (150, 108), rotation 0, on every stack board. The breakouts
@@ -114,7 +114,7 @@ def clean_net(name):
 def read_pinout():
     maps = {}
     for key, rel in SOURCES.items():
-        board = pcbnew.LoadBoard(os.path.join(TWO_STORY, rel))
+        board = pcbnew.LoadBoard(os.path.join(STACK, rel))
         fp = board.FindFootprintByReference("J_STACK1")
         maps[key] = {p.GetNumber(): p.GetNetname() for p in fp.Pads()
                      if p.GetNumber().isdigit()}
@@ -628,7 +628,8 @@ def write_project(dirname, name):
 def copy_footprints():
     os.makedirs(LOCAL_LIB, exist_ok=True)
     for name, board in DF40_FOOTPRINTS.items():
-        src = os.path.join(TWO_STORY, board, "X1_Draft.pretty", name + ".kicad_mod")
+        project = os.path.dirname(SOURCES[board])
+        src = os.path.join(STACK, project, "X1_Draft.pretty", name + ".kicad_mod")
         shutil.copyfile(src, os.path.join(LOCAL_LIB, name + ".kicad_mod"))
 
 

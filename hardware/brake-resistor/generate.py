@@ -1,4 +1,7 @@
-"""Generate the X1 brake resistor board (schematic, footprints and 2-layer PCB).
+"""Generate the earlier 120 x 86 mm X1 brake resistor board.
+
+This script overwrites the project in place. The current 190 x 38 mm strip
+layout is maintained in the checked-in KiCad project.
 
 Run with KiCad's bundled Python:
     "%LOCALAPPDATA%/Programs/KiCad/10.0/bin/python.exe" generate.py

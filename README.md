@@ -1,44 +1,63 @@
 # Open actuator drive
 
+KiCad designs and simulation models for a nominal 48 V brushless actuator
+drive and its support electronics. See the [humanoid upper-body project
+page](https://darshpatel.xyz/projects/humanoid-upper-body) for board renders,
+system context, and the simulations behind the designs.
 
-KiCad hardware and simulation models for a 12S (10 to 54 V) brushless actuator
-drive and the support electronics around it, built for a humanoid upper body
-(OpenArm v2 class arms).
+**All designs in this repository are unfinished, unvalidated research prototypes.**
+No hardware validation has been performed. Routing and KiCad checks describe the
+state of the design files. Fabrication, assembly, and hardware bring-up and
+testing are still open.
 
-**Warning.** These boards switch tens of amps from a 50 V battery. They are
-research prototypes and have not been fully qualified. Build and test them at
-your own risk.
+## Boards
 
-## What is here
+| Board | KiCad source and notes | Gerbers and drill | Current state |
+|---|---|---|---|
+| DC bus support | [180 × 45 mm board](hardware/support-board/) | [ZIP](fab/support-board/SupportBoard/SupportBoard-gerbers.zip) | Routed. No DRC findings or open connections. Three ERC library-symbol warnings. |
+| Brake resistor Rev B | [190 × 38 mm strip](hardware/brake-resistor/) | [ZIP](fab/brake-resistor/BrakeResistor/BrakeResistor-gerbers.zip) | Routed. No DRC or ERC findings. Strip cooling and the thermostat interlock need testing. |
+| External capacitor bank | [101.6 × 25.4 mm board](hardware/capacitor-bank/) | [ZIP](fab/capacitor-bank/CapacitorBank/CapacitorBank-gerbers.zip) | Routed. No DRC or ERC findings. Capacitor fit and electrical behavior need testing. |
+| DF40 header breakout | [Bench breakout](hardware/df40-breakouts/DF40_Header_Breakout/) | [ZIP](fab/df40-breakouts/DF40_Header_Breakout/DF40_Header_Breakout-gerbers.zip) | Routed. No DRC or ERC findings. Mating orientation and fit need checking. |
+| DF40 receptacle breakout | [Bench breakout](hardware/df40-breakouts/DF40_Receptacle_Breakout/) | [ZIP](fab/df40-breakouts/DF40_Receptacle_Breakout/DF40_Receptacle_Breakout-gerbers.zip) | Routed. No DRC or ERC findings. Mating orientation and fit need checking. |
+| Common logic | [Controller stack draft](hardware/wip/logic-board/) | | Partially routed, 177 unconnected items. |
+| P96 power | [Controller stack draft](hardware/wip/power-p96/) | | Partially routed, 212 unconnected items and one silkscreen DRC finding. |
+| WGG power | [Controller stack draft](hardware/wip/power-wgg/) | | Partially routed, 258 unconnected items. |
 
-| Path | Contents | Status |
-|---|---|---|
-| `hardware/support-board/` | Hot-swap and precharge input, bulk DC link, two power and CAN chain ports, brake chopper, discharge control. 180 x 45 mm. | Routed. DRC 0 errors, 0 unconnected. Circuit qualification still open. |
-| `hardware/brake-resistor/` | 2.5 ohm bank (4x LTO100 on RA-T2X sinks) with an 85 C thermostat. 98 x 86 mm, 2 layers. 41 W average at 40 C. | Routed. DRC clean. |
-| `hardware/df40-breakouts/` | Bench breakouts for the Hirose DF40 80-pin stack connector, header and receptacle halves. 2 layers, JLCPCB standard rules. | Routed. DRC and ERC clean. |
-| `hardware/capacitor-bank/` | External bulk capacitor board. | Routed. DRC clean. |
-| `hardware/wip/` | Two-story drive stack: logic board, WGG power board, P96 power board. Derived from mjbots moteus X1. | Placement stage, not routed. |
-| `fab/` | Gerbers and drill (zipped), schematic PDF, BOM CSV and pick-and-place for each routed board. | Generated with KiCad 10.0.7. |
-| `simulation/openarm-simulink/` | One-arm Simulink/Simscape dynamics plus an averaged electrical model of the drive and support board. `variants/` holds the parameter sets for the motor and magnet studies. | Checks pass. Not validated against hardware. |
-| `simulation/openarm-mujoco/` | OpenArm v2 upper-body MuJoCo setup driven from MATLAB. Fetches the upstream OpenArm model with `fetch_assets.py`. | Numerical checks pass. |
-| `simulation/mabel-gim-sizing/` | Actuator sizing against MABEL arm loads. Needs a local clone of open_mabel. | |
-| `simulation/virtual-actuator/` | Synthetic two-joint arm and actuator plant for control experiments. | Synthetic model. |
+Open each project's `.kicad_pro` in KiCad 10. The five routed boards also have
+schematic PDFs, BOMs and position files. See [fabrication files](fab/) for
+export settings and the scope of the checks. See the [DF40 breakout
+notes](hardware/df40-breakouts/) for the pin map and bench setup.
 
-## Tools
+## Work still open
 
-- KiCad 9 or newer for `hardware/`. The `fab/` outputs were made with KiCad 10.0.7.
-- MATLAB R2026a with Simulink, Simscape and Robotics System Toolbox for
-  `simulation/openarm-simulink/`.
-- Python 3.11 with the pinned requirements in each simulation folder. MuJoCo 3.6.0 for
-  `openarm-mujoco`.
+- Finish routing the common logic, P96 and WGG boards. Close remaining ERC and
+  DRC findings, confirm motor and stack fit, and test the firmware and
+  controller interfaces.
+- Review the routed boards with the fabricator, check the stackup and part
+  footprints, and build and inspect first articles. Check the DF40 pin mapping
+  against the connector mating view and verify fit and continuity.
+- Bench-test the power input and precharge, overcurrent and voltage protection,
+  bus ripple and discharge, the regen chopper and the brake thermostat. Measure
+  thermal behavior at the intended voltage, current, duty cycle and airflow.
+  The simulations and calculations do not establish safe operating limits.
+- Test the assembled drive with the intended motors and loads. Correlate the
+  electrical, mechanical and thermal models with measured data.
+
+## Simulations
+
+| Model | What it covers |
+|---|---|
+| [OpenArm Simulink](simulation/openarm-simulink/) | One-arm dynamics and averaged electrical model. MATLAB R2026a with Simulink, Simscape and Robotics System Toolbox. |
+| [OpenArm MuJoCo](simulation/openarm-mujoco/) | Numerical baseline with pinned upstream OpenArm assets. |
+| [Virtual actuator](simulation/virtual-actuator/) | Synthetic two-joint arm and actuator plant for control experiments. |
 
 ## Licence
 
-| What | Licence |
+| Files | Licence |
 |---|---|
-| Hardware design files (KiCad sources, footprints, 3D bodies, fab outputs) | [CERN-OHL-S-2.0](LICENSE-HARDWARE) |
-| Code (Python, MATLAB, scripts) and simulation models | [Apache-2.0](LICENSE-APACHE) |
-| Documentation and images | [CC BY 4.0](LICENSE-DOCS) |
+| Original hardware sources, footprints, 3D bodies and fabrication outputs | [CERN-OHL-S-2.0](LICENSE-HARDWARE) |
+| Original Python and MATLAB code and simulation models | [Apache-2.0](LICENSE-APACHE) |
+| Original documentation and images | [CC BY 4.0](LICENSE-DOCS) |
 
-Files derived from mjbots moteus X1 keep their Apache-2.0 licence and notice. See
-[NOTICE](NOTICE.md) for upstream projects and their licences.
+The mjbots-derived controller boards and the upstream simulation assets have
+their own terms. See [third-party notices](NOTICE.md).

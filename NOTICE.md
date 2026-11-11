@@ -20,10 +20,3 @@ This project is not an mjbots product and is not endorsed by mjbots.
 model from <https://github.com/enactic/openarm_mujoco> at a pinned commit
 (Apache-2.0). Only the OpenArm v2 URDF is redistributed, in
 `simulation/openarm-mujoco/reference/`.
-
-## MABEL
-
-`simulation/mabel-gim-sizing/` reads a local clone of
-<https://github.com/robotmabel/open_mabel>. MABEL software is Apache-2.0, its
-hardware is CERN-OHL-S-2.0 and its documentation is CC BY 4.0. No MABEL files
-are redistributed here. "MABEL" is not licensed as a trademark.
